@@ -251,7 +251,7 @@ isContinuousResidence.forEach((radio)=>{
 })
 // ---collect data form phase3 input----
 phase3Input.forEach((input)=>{
-    input.addEventListener("click", () => {
+    input.addEventListener("click", (e) => {
         input.classList.remove('warnInput');
         applicantInfo={
             ...applicantInfo,
@@ -462,7 +462,7 @@ function handlePhaseFiveBtn(){
 let isPhase6Validate = "false";
 const phase6 = document.getElementById('phase6');
 const phase6inputs = document.querySelectorAll('#phase6 input');
-const phase6btn = document.getElementById('phase6btn');
+
 
 phase6inputs.forEach((input) => {
     input.addEventListener("click", () => {

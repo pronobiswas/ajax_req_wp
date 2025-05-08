@@ -1,5 +1,6 @@
 <?php
 // Enqueue styles and scripts
+
 function child_enqueue_files() {
     // Parent and child theme styles
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
@@ -78,6 +79,10 @@ function custom_logout_redirect() {
 }
 
 //-------------------------------------------      OUR CODE START HERE       ----------------------------------------------------------------------------------------
+// =========include all from nessery things============
+include_once get_stylesheet_directory().'/imigrationDB.php';
+include_once get_stylesheet_directory().'/ajax_req_handeler.php';
+// =========include all from nessery things============
 function enqueue_my_custom_js() {
     wp_enqueue_script(
         wp_enqueue_script('jquery-ui', get_stylesheet_directory_uri() . '/assets/plugins/jquery-ui/jquery-ui.min.js', array('jquery'), null, true),
@@ -96,51 +101,6 @@ function custom_register_form_assets() {
 add_action('wp_enqueue_scripts', 'custom_register_form_assets');
 
     
-function create_registration_tables() {
-    global $wpdb;
-    $first_table = $wpdb->prefix . 'register1';
-    $second_table = $wpdb->prefix . 'entryintous';
-    $charset_collate = $wpdb->get_charset_collate();
-    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-    $sql1 = "CREATE TABLE $first_table (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        full_name varchar(255) NOT NULL,
-        other_name varchar(255) NOT NULL,
-        mailing_address varchar(100) NOT NULL,
-        city varchar(100) NOT NULL,
-        zip_code varchar(255) NOT NULL,
-        phone_number varchar(20),
-        email_address varchar(250) NOT NULL,
-        height varchar(250) NOT NULL,
-        weight varchar(20) NOT NULL,
-        date_of_birth varchar(100) NOT NULL,
-        place_of_birth varchar(100) NOT NULL,
-        country_of_citizenship varchar(100) NOT NULL,
-        marital_status varchar(100) NOT NULL,
-        created_at datetime DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (id)
-    ) $charset_collate;";
-
-    $sql2 = "CREATE TABLE $second_table (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        date_of_entry varchar(255) NOT NULL,
-        how_to_enter varchar(255) NOT NULL,
-        mailing_address varchar(100) NOT NULL,
-        have_you_ever_left_the_US varchar(100) NOT NULL,
-        reason_for_leaving varchar(255) NOT NULL,
-        departure_date1 varchar(20),
-        return_date1 varchar(250) NOT NULL,
-        created_at datetime DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (id)
-    ) $charset_collate;";
-
-    dbDelta($sql1);
-    dbDelta($sql2);
-}
-add_action('admin_init', 'create_registration_tables');
-
-    
 function custom_register_form_shortcode() {
     ob_start(); ?>
     <?php 
@@ -150,74 +110,6 @@ function custom_register_form_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('custom_register_form', 'custom_register_form_shortcode');
-
-    
-function handle_register_form() {
-    check_ajax_referer('register_nonce', 'nonce');
-
-    global $wpdb;
-    $table = $wpdb->prefix . 'register1';
-    
-
-    $data = [
-        'full_name' => sanitize_text_field($_POST['full_name']),
-        'other_name' => sanitize_text_field($_POST['other_name']),
-        'mailing_address' => sanitize_text_field($_POST['mailing_address']),
-        'city' => sanitize_text_field($_POST['city']),
-        'zip_code' => sanitize_text_field($_POST['zip_code']),
-        'phone_number' => sanitize_text_field($_POST['phone_number']),
-        'email_address' => sanitize_email($_POST['email_address']),
-        'height' => sanitize_text_field($_POST['height']),
-        'weight' => sanitize_text_field($_POST['weight']),
-        'date_of_birth' => sanitize_text_field($_POST['date_of_birth']),
-        'place_of_birth' => sanitize_text_field($_POST['place_of_birth']),
-        'country_of_citizenship' => sanitize_text_field($_POST['country_of_citizenship']),
-        'marital_status' => sanitize_key($_POST['marital_status']),
-    ];
-    
-
-    $inserted = $wpdb->insert($table, $data);
-    
-
-    if ($inserted) {
-        wp_send_json_success('Registration successful!');
-    } else {
-        wp_send_json_error('Failed to register. Please try again.');
-    }
-}
-add_action('wp_ajax_handle_register_form', 'handle_register_form');
-add_action('wp_ajax_nopriv_handle_register_form', 'handle_register_form');
-
-
-
-// ===save phase two====
-function handle_phase_two() {
-    check_ajax_referer('register_nonce', 'nonce');
-
-    global $wpdb;
-    $table2 = $wpdb->prefix . 'entryintous';
-
-    $data2 = [
-        'date_of_entry' => sanitize_text_field($_POST['date_of_entry']),
-        'how_to_enter' => sanitize_text_field($_POST['how_to_enter']),
-        'mailing_address' => sanitize_text_field($_POST['mailing_address']),
-        'have_you_ever_left_the_US' => sanitize_text_field($_POST['have_you_ever_left_the_US']),
-        'reason_for_leaving' => sanitize_text_field($_POST['reason_for_leaving']),
-        'departure_date1' => sanitize_text_field($_POST['departure_date1']),
-        'return_date1' => sanitize_text_field($_POST['return_date1']),
-    ];
-
-    $inserted = $wpdb->insert($table2, $data2);
-
-    if ($inserted) {
-        wp_send_json_success('Phase 2 saved successfully.');
-    } else {
-        wp_send_json_error('Failed to save Phase 2.');
-    }
-}
-add_action('wp_ajax_save_phase_two', 'handle_phase_two');
-add_action('wp_ajax_nopriv_save_phase_two', 'handle_phase_two');
-
 
 
 // require files

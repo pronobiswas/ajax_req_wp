@@ -49,7 +49,7 @@
     <div class="pro_form">
       <!-- =========PERSONAL INFORMATION========= -->
        <form id="cityzenPth_form" method="POST" >
-         <section id="phase1" class="">
+         <section id="phase1" class="hidden">
            <h2 class="sectionHeading">PERSONAL INFORMATION</h2>
            <div class="phaseOneContent phaseContent">
              <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
@@ -430,169 +430,107 @@
                </div>
              </div>
              <div id="residences" class="hidden">
-               <!-- <table>
-                     <thead>
-                       <p>
-                         <b
-                           >List all of your residences since your arrival in the
-                           U.S:</b
-                         >
-                       </p>
-                     </thead>
-                     <tbody>
-                       <tr>
-                         <th>Address</th>
-                         <th>
-                           <p>From</p>
-                           <p>(month/year)</p>
-                         </th>
-                         <th>
-                           <p>To</p>
-                           <p>(month/year)</p>
-                         </th>
-                       </tr>
-                       <tr>
-                         <td><input type="text" name="address1" /></td>
-                         <td><input type="date" name="from_date1" /></td>
-                         <td><input type="date" name="to_date1" /></td>
-                       </tr>
-                       <tr>
-                         <td><input type="text" name="address2" /></td>
-                         <td><input type="date" name="from_date2" /></td>
-                         <td><input type="date" name="to_date2" /></td>
-                       </tr>
-                       <tr>
-                         <td><input type="text" name="address3" /></td>
-                         <td><input type="date" name="from_date3" /></td>
-                         <td><input type="date" name="to_date3" /></td>
-                       </tr>
-                       <tr>
-                         <td><input type="text" name="address4" /></td>
-                         <td><input type="date" name="from_date4" /></td>
-                         <td><input type="date" name="to_date4" /></td>
-                       </tr>
-                     </tbody>
-                   </table> -->
+              
                <div class="residence_detail_wraper">
-                 <div class="pro_form_group">
-                   <!-- --residence_address-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="residence_address1">Address</label>
-                     </div>
-                     <div class="pro_input">
-                       <input
-                         type="text"
-                         name="address1"
-                         id="residence_address1" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_from_date1-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="from_date1"> From (month/year) </label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="from_date1" id="from_date1" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_to_date1-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="to_date1">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="to_date1" id="to_date1" />
-                     </div>
-                   </div>
-                 </div>
-                 <div class="pro_form_group">
-                   <!-- --residence_address-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="address2">Address</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="text" name="address2" id="address2" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_from_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="from_date2">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="from_date2" id="from_date2" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_to_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="to_date2">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="to_date2" id="to_date2" />
-                     </div>
-                   </div>
-                 </div>
-                 <div class="pro_form_group">
-                   <!-- --residence_address-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="address3">Address</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="text" name="address3" id="address3" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_from_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="from_date3">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="from_date3" id="from_date3" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_to_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="to_date3">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="to_date3" id="to_date3" />
-                     </div>
-                   </div>
-                 </div>
-                 <div class="pro_form_group">
-                   <!-- --residence_address-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="address4">Address</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="text" name="address4" id="address4" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_from_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="from_date4">From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="from_date4" id="from_date4" />
-                     </div>
-                   </div>
-                   <!-- --residence_address_to_date2-- -->
-                   <div class="pro_input_Row">
-                     <div class="pro_label">
-                       <label for="to_date4"> From (month/year)</label>
-                     </div>
-                     <div class="pro_input">
-                       <input type="date" name="to_date4" id="to_date4" />
-                     </div>
-                   </div>
-                 </div>
+                <fieldset>
+                  <div class="pro_form_group">
+                    <!-- --residence_address-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="residence_address1">Address</label>
+                      </div>
+                      <div class="pro_input">
+                        <input
+                          type="text"
+                          name="residence_address1"
+                          id="residence_address1" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_from_date1-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="from_date1"> From (month/year) </label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="from_date1" id="from_date1" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_to_date1-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="to_date1">To (month/year)</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="to_date1" id="to_date1" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="pro_form_group">
+                    <!-- --residence_address-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="address2">Address</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="text" name="address2" id="address2" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_from_date2-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="from_date2">From (month/year)</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="from_date2" id="from_date2" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_to_date2-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="to_date2">From (month/year)</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="to_date2" id="to_date2" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="pro_form_group">
+                    <!-- --residence_address-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="address3">Address</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="text" name="address3" id="address3" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_from_date2-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="from_date3">From (month/year)</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="from_date3" id="from_date3" />
+                      </div>
+                    </div>
+                    <!-- --residence_address_to_date2-- -->
+                    <div class="pro_input_Row">
+                      <div class="pro_label">
+                        <label for="to_date3">From (month/year)</label>
+                      </div>
+                      <div class="pro_input">
+                        <input type="date" name="to_date3" id="to_date3" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
                </div>
              </div>
              <!-- SCHOOL/MILITARY STATUS -->
@@ -681,7 +619,7 @@
            </div>
            <div class="pahasebtnBox">
              <button class="stepBtn" onclick="handlePreviousBtn(phase2,phase3)"> &lt; Previous</button>
-             <button class="stepBtn" onclick="handlePhase3btn()">
+             <button class="stepBtn" id="nextBtn3" onclick="handlePhase3btn()">
                next &gt;
              </button>
            </div>
@@ -747,7 +685,7 @@
            </div>
            <div class=" pahasebtnBox">
              <button class="stepBtn" onclick="handlePreviousBtn(phase3,phase4)">&lt; Previous</button>
-             <button class="stepBtn" onclick="handlePhaseFourBtn()">next &gt; </button>
+             <button class="stepBtn" onclick="handlePhaseFourBtn()" id="nextBtn4">next &gt; </button>
            </div>
          </section>
          <!-- =======INFORMATION ABOUT YOUR CURRENT SPOUSE====== -->
@@ -986,7 +924,7 @@
                  <!-- --current_address_of_spouse-- -->
                  <div class="pro_input_Row">
                    <div class="pro_label">
-                     <label for="current_address_of_spouse">From (month/year)</label>
+                     <label for="current_address_of_spouse">Current Address of Spouse</label>
                    </div>
                    <div class="pro_input">
                      <input
@@ -1122,7 +1060,7 @@
                    </div>
                    <div class="pro_input">
                      <input
-                       type="text"
+                       type="date"
                        name="date_spouse_first_entered_us"
                        id="date_spouse_first_entered_us" />
                    </div>
@@ -1305,11 +1243,12 @@
            </div>
            <div class="pahasebtnBox">
              <button class="stepBtn" onclick="handlePreviousBtn(phase4,phase5)">&lt; Previous</button>
-             <button class="stepBtn" onclick="handlePhaseFiveBtn()">next &gt;</button>
+             <button class="stepBtn"  id="nextBtn5" onclick="handlePhaseFiveBtn()">next &gt;</button>
+             
            </div>
          </section>
-         <!-- =====INFORMATION ABOUT YOUR CURRENT SPOUSE==== -->
-         <section id="phase6" class="hidden">
+         <!-- =====INFORMATION ABOUT YOUR PRIOR SPOUSE==== -->
+         <section id="phase6" class="">
            <h2>INFORMATION ABOUT YOUR PRIOR MARRIAGE</h2>
            <div class="phaseSixContent phaseContent">
    
@@ -1329,28 +1268,28 @@
                    <!-- --date_marrige_began-- -->
                    <div class="pro_input_Row">
                      <div class="pro_label">
-                       <label for="date_marrige_began">Date Marrige Began:</label>
+                       <label for="date_prior_marrige_began">Date Marrige Began:</label>
                      </div>
                      <div class="pro_input">
-                       <input type="text" id="date_marrige_began" name="date_marrige_began" required />
+                       <input type="text" id="date_prior_marrige_began" name="date_prior_marrige_began" required />
                      </div>
                    </div>
-                   <!-- --date_marrige_ended-- -->
+                   <!-- --date_prior_marrige_ended-- -->
                    <div class="pro_input_Row">
                      <div class="pro_label">
-                       <label for="date_marrige_ended">Date Marrige Ended:</label>
+                       <label for="date_prior_marrige_ended">Date Marrige Ended:</label>
                      </div>
                      <div class="pro_input">
-                       <input type="text" id="date_marrige_ended" name="date_marrige_ended" required />
+                       <input type="text" id="date_prior_marrige_ended" name="date_prior_marrige_ended" required />
                      </div>
                    </div>
                    <!-- --place_marrige_ended-- -->
                    <div class="pro_input_Row">
                      <div class="pro_label">
-                       <label for="place_marrige_ended">Place Marriage Ended(City and Country)</label>
+                       <label for="place_prior_marrige_ended">Place Marriage Ended(City and Country)</label>
                      </div>
                      <div class="pro_input">
-                       <input type="text" id="place_marrige_ended" name="place_marrige_ended" required />
+                       <input type="text" id="place_prior_marrige_ended" name="place_prior_marrige_ended" required />
                      </div>
                    </div>
                    <!-- --description_of_why_marrige_ended-- -->
@@ -1383,31 +1322,31 @@
                          <input type="text" id="full_name_of_prior_spouse1" name="full_name_of_prior_spouse1" required />
                        </div>
                      </div>
-                     <!-- --date_marrige_began-- -->
+                     <!-- --date_prior_marrige_began-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="date_marrige_began1">Date Marrige Began:</label>
+                         <label for="date_prior_marrige_began1">Date Marrige Began:</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="date_marrige_began1" name="date_marrige_began1" required />
+                         <input type="text" id="date_prior_marrige_began1" name="date_prior_marrige_began1" required />
                        </div>
                      </div>
                      <!-- --date_marrige_ended-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="date_marrige_ended1">Date Marrige Ended:</label>
+                         <label for="date_prior_marrige_ended1">Date Marrige Ended:</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="date_marrige_ended1" name="date_marrige_ended1" required />
+                         <input type="text" id="date_prior_marrige_ended1" name="date_prior_marrige_ended1" required />
                        </div>
                      </div>
                      <!-- --place_marrige_ended-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="place_marrige_ended1">Place Marriage Ended(City and Country)</label>
+                         <label for="place_prior_marrige_ended1">Place Marriage Ended(City and Country)</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="place_marrige_ended1" name="place_marrige_ended1" required />
+                         <input type="text" id="place_prior_marrige_ended1" name="place_prior_marrige_ended1" required />
                        </div>
                      </div>
                      <!-- --description_of_why_marrige_ended-- -->
@@ -1429,37 +1368,37 @@
                      <!-- --full_name_of_prior_spouse-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="full_name_of_prior_spouse1">Full Name of your Prior Spouse(Last,First,Middle)</label>
+                         <label for="full_name_of_prior_spouse2">Full Name of your Prior Spouse(Last,First,Middle)</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="full_name_of_prior_spouse1" name="full_name_of_prior_spouse1" required />
+                         <input type="text" id="full_name_of_prior_spouse2" name="full_name_of_prior_spouse2" required />
                        </div>
                      </div>
                      <!-- --date_marrige_began-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="date_marrige_began2">Date Marrige Began:</label>
+                         <label for="date_prior_marrige_began2">Date Marrige Began:</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="date_marrige_began2" name="date_marrige_began2" required />
+                         <input type="text" id="date_prior_marrige_began2" name="date_prior_marrige_began2" required />
                        </div>
                      </div>
                      <!-- --date_marrige_ended-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="date_marrige_ended2">Date Marrige Ended:</label>
+                         <label for="date_prior_marrige_ended2">Date Marrige Ended:</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="date_marrige_ended2" name="date_marrige_ended2" required />
+                         <input type="text" id="date_prior_marrige_ended2" name="date_prior_marrige_ended2" required />
                        </div>
                      </div>
                      <!-- --place_marrige_ended-- -->
                      <div class="pro_input_Row">
                        <div class="pro_label">
-                         <label for="place_marrige_ended2">Place Marriage Ended(City and Country)</label>
+                         <label for="place_prior_marrige_ended2">Place Marriage Ended(City and Country)</label>
                        </div>
                        <div class="pro_input">
-                         <input type="text" id="place_marrige_ended2" name="place_marrige_ended2" required />
+                         <input type="text" id="place_prior_marrige_ended2" name="place_prior_marrige_ended2" required />
                        </div>
                      </div>
                      <!-- --description_of_why_marrige_ended-- -->
@@ -1480,7 +1419,8 @@
    
            <div class="pahasebtnBox">
              <button class="stepBtn" onclick="handlePreviousBtn(phase5,phase6)">&lt; Previous</button>
-             <button class="stepBtn" id="phase6btn" onclick="handlePhase6next()">Next &gt;</button>
+             <button class="stepBtn"   id="nextBtn6">Next &gt;</button>
+             <!-- onclick="handlePhase6next()" -->
            </div>
          </section>
          <!-- ==========INFORMATION ABOUT YOUR CHILDREN================= -->
