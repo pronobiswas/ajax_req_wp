@@ -1,0 +1,1127 @@
+/* ########pronob######### */
+:root {
+    --primary: #1e90ff;
+    --secondery: #00a700;
+    --black: #000;
+    --gray: gray;
+    --textPrimery: 0072bc;
+    --white: #fff;
+    --bgPrimary: #0b7ce623;
+    --borderColor: #3c495541;
+    --Montserrat: Montserrat;
+    --Cardo: Cardo;
+    --JosefinSlab: Josefin Slab;
+  }
+  
+  .pro-hidden {
+    display: none;
+  }
+  .warnInput {
+    border-color: red !important;
+  }
+  
+  .pro_from_group_wraper .pro_form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #immigration_form .pro_input_Row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  #immigration_form .pro_input_Row .pro_label {
+    width: 100%;
+  }
+  #immigration_form .pro_input_Row .pro_label label {
+    display: inline-block;
+    white-space: wrap;
+    max-width: 100%;
+    width: 100%;
+    color: #0072bc;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  #immigration_form .pro_input_Row .pro_input {
+    width: 100%;
+  }
+  #immigration_form .pro_input_Row .pro_input input {
+    width: 100%;
+    padding: 8px;
+    outline: 1px solid transparent;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_input_Row .pro_input input:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_input_Row .pro_input input:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_input_Row .pro_input select {
+    width: 65%;
+    padding: 8px;
+    border-radius: 5px;
+    outline: 1px solid #e2e2e2;
+    border: 1px solid #b6b6b6;
+  }
+  #immigration_form .pro_input_Row .pro_input select:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: #004c97;
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_input_Row .pro_input select:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  
+  #immigration_form input[type=radio] {
+    accent-color: var(--primary) !important;
+    border: 1px solid red;
+    color: rebeccapurple;
+    background-color: #000;
+  }
+  
+  input[type=radio] {
+    accent-color: red;
+  }
+  
+  .pahaseBtnBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px !important;
+  }
+  .pahaseBtnBox button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  .pahaseBtnBox button:hover {
+    background-color: var(--secondery);
+  }
+  
+  button.addMore {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 5px 24px !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background-color: transparent !important;
+    cursor: pointer;
+    transition: 0.2s all linear;
+  }
+  button.addMore:hover {
+    background-color: var(--primary) !important;
+    border-radius: 5px;
+    color: var(--white) !important;
+  }
+  
+  #immigration_form * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+  }
+  #immigration_form .hidden{display: none !important;}
+  .pro_container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto !important;
+    padding: 0 20px;
+  }
+  
+  #immigration_form {
+    width: 100%;
+  }
+  #immigration_form .hidden {
+    display: none;
+  }
+  #immigration_form .nextBtn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5px;
+  }
+  #immigration_form .radioRow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 25px 0;
+  }
+  #immigration_form .radioRow input[type=radio] {
+    cursor: pointer;
+  }
+  #immigration_form header {
+    background-color: rgba(238, 238, 238, 0.9333333333);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form header .mainHeader {
+    padding: 15px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary);
+  }
+  #immigration_form header .mainHeader .logo {
+    width: 282px;
+    cursor: pointer;
+  }
+  #immigration_form header .mainHeader .logo img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #immigration_form header .mainHeader .login {
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  #immigration_form header .mainHeader .login span {
+    font-size: 20px;
+  }
+  #immigration_form header nav {
+    padding: 0px;
+    padding-left: 10px;
+    background: var(--primary);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #immigration_form header nav h1 {
+    color: white;
+    font-size: 16pt;
+  }
+  #immigration_form header nav .veryfiedANDscecuredBTN {
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+    color: var(--secondery);
+    background-color: white;
+    transition: 0.1s all linear;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  #immigration_form header nav .veryfiedANDscecuredBTN:hover {
+    background-color: var(--secondery);
+    color: white;
+  }
+  #immigration_form header nav .headerBTNBox {
+    display: flex;
+  }
+  #immigration_form header nav .headerBTNBox button {
+    background-color: #0061bb;
+    height: 100%;
+    cursor: pointer;
+    padding: 14px;
+    border: 1px solid #0043a7;
+    color: #fff;
+    transition: 0.1s all linear;
+  }
+  #immigration_form header nav .headerBTNBox button:hover {
+    background: var(--secondery);
+  }
+  #immigration_form header .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 8px;
+  }
+  #immigration_form header .heading h2 {
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: 600;
+  }
+  @media (max-width: 1115px) {
+    #immigration_form header .heading {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    #immigration_form header .heading .headingContent {
+      order: 2;
+    }
+    #immigration_form header .heading .pageOption {
+      order: 1;
+    }
+  }
+  #immigration_form header .heading .pageOption {
+    width: 100px;
+    font-size: 14px;
+    padding: 4px 12px;
+    height: 30px;
+    background-color: #1e90ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    border-radius: 5px;
+    position: relative;
+    border: 2px solid gray;
+    cursor: pointer;
+  }
+  #immigration_form header .heading .pageOption .formPagenetion {
+    position: absolute;
+    width: 120%;
+    top: 29px;
+    right: -2px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    color: #fff;
+  }
+  #immigration_form header .heading .pageOption .formPagenetion ol {
+    background-color: gray;
+    list-style-position: inside;
+  }
+  #immigration_form header .heading .pageOption .formPagenetion ol li {
+    width: 100%;
+    padding: 4px;
+  }
+  #immigration_form header .heading .pageOption .formPagenetion ol li:hover {
+    background: rgba(0, 0, 0, 0.1176470588);
+    color: var(--primary);
+    cursor: pointer;
+  }
+  #immigration_form header .heading .pageOption .formPagenetion ol :first-child {
+    background: #004c97;
+  }
+  #immigration_form header button {
+    border: none;
+  }
+  #immigration_form .pro_container .pro_form {
+    width: 100%;
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 4px 11px 0px rgb(112, 112, 112);
+  }
+  #immigration_form .pro_container .pro_form #phase1 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 30px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .genaralInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .personalInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .pro_input_Row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .pro_input_Row .pro_label {
+    width: 35%;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent .pro_input_Row .pro_input {
+    width: 65%;
+  }
+  #immigration_form .pro_container .pro_form #phase1 .phaseOneContent #nextBtn1 {
+    border: 1px solid transparent;
+    margin-top: 40px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+  }
+  #immigration_form .pro_container .pro_form #phase2 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent .pro_input_wraper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable {
+    width: 100%;
+    margin-top: 50px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable h4 {
+    margin-bottom: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable fieldset {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable fieldset legend {
+    color: var(--primary);
+  }
+  #immigration_form .pro_container .pro_form #phase2 .phaseTwoContent #ReasonforLeavingTable fieldset .resone_of_liveing {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .pahase2btnBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .pahase2btnBox button {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 5px 85px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  #immigration_form .pro_container .pro_form #phase2 .pahase2btnBox button:hover {
+    background-color: var(--secondery);
+  }
+  #immigration_form .pro_container .pro_form #phase3 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .phaseThreeContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 0px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea {
+    width: 100%;
+    padding: 8px;
+    outline: 1px solid transparent;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_container .pro_form #phase3 .phaseThreeContent #explainLeftReason textarea:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences {
+    text-align: center;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences p {
+    margin-bottom: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper .pro_form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper .pro_form_group .pro_input_Row .pro_label {
+    width: 35%;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper .pro_form_group .pro_input_Row .pro_input {
+    width: 65%;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences tr {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences td {
+    padding: 0;
+    border: 1px solid black;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences td:first-child {
+    width: 50%;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences td:nth-child(2) {
+    width: 25%;
+  }
+  #immigration_form .pro_container .pro_form #phase3 #residences td:nth-child(3) {
+    width: 25%;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow label {
+    display: inline-block;
+    white-space: wrap;
+    max-width: 210px;
+    width: 35%;
+    color: #0072bc;
+    font-weight: 600;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow input,
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow select {
+    width: 65%;
+    padding: 8px;
+    outline: 1px solid transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow input:focus,
+  #immigration_form .pro_container .pro_form #phase3 .educationORmilitary .inputRow select:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline-color: #004c97;
+    box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_container .pro_form #phase3 .pahase3btnBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  #immigration_form .pro_container .pro_form #phase3 .pahase3btnBox button {
+    border: none;
+    outline: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase4 {
+    padding: 20px 0;
+  }
+  #immigration_form .pro_container .pro_form #phase4 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .pro_input_Row .pro_label {
+    width: 40%;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion label {
+    display: inline-block;
+    white-space: wrap;
+    max-width: 100%;
+    width: 100%;
+    color: #0072bc;
+    font-weight: 400;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 15px;
+    border-radius: 5px;
+    outline: 1px solid #e2e2e2;
+    border: 1px solid #b6b6b6;
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline: #004c97;
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_container .pro_form #phase4 .phaseFourContent .employmentAuth .explain_work_authoraizetion textarea:hover {
+    border: 1px solid var(--primary);
+    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+  }
+  #immigration_form .pro_container .pro_form #phase5 {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase5 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table {
+    width: 100%;
+    border: 1px solid gray;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr th {
+    width: 25%;
+    border: 1px solid gray;
+    padding: 10px 0;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td {
+    width: 25%;
+    border: 1px solid gray;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid transparent;
+    transition: 0.2s all linear;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td input:hover {
+    padding: 8px;
+    border-color: var(--primary);
+    outline-color: #004c97;
+    box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td input:focus {
+    padding: 8px;
+    border-color: var(--primary);
+    outline-color: #004c97;
+    box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 76, 151, 0.77);
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td textarea {
+    width: 100%;
+    border: none;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr td label {
+    display: inline-block;
+    margin: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr .flexible .tdInputRow {
+    display: flex;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr .flexible .tdInputRow label {
+    width: 40%;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse table tr .flexible .tdInputRow input {
+    width: 70%;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #currentSpouse .pro_form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #informationSpouseEmployment {
+    width: 100%;
+    margin-top: 50px;
+  }
+  #immigration_form .pro_container .pro_form #phase5 .phaseFiveContent #informationSpouseEmployment .pro_form_gorup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase6 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase6 .phaseSixContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase6 .phaseSixContent #phase6wraper .pro_form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase6 .phaseSixContent #phase6wraper .part1 {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  #immigration_form .pro_container .pro_form #phase6 .phaseSixContent #phase6wraper .part2 {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase6 .phaseSixContent #phase6wraper fieldset {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase7 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase7 .pro_table table {
+    border: 1px solid var(--borderColor);
+    border-collapse: collapse;
+  }
+  #immigration_form .pro_container .pro_form #phase7 .pro_table table tr td {
+    border: 1px solid var(--borderColor);
+  }
+  #immigration_form .pro_container .pro_form #phase7 .pro_table table tr td input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--borderColor);
+  }
+  #immigration_form .pro_container .pro_form #phase7 .phaseSevenContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 0px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase7 .pro_from_group_wraper .pro_form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase7 .pro_from_group_wraper fieldset {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  #immigration_form .pro_container .pro_form #phase8 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase8 .phaseEightContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase8 .phaseEightContent .pro_from_group_wraper {
+    width: 100%;
+  }
+  #immigration_form .pro_container .pro_form #phase8 .phaseEightContent .pro_from_group_wraper .pro_form_group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase8 fieldset {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  #immigration_form .pro_container .pro_form #phase8 fieldset legend {
+    color: var(--primary);
+  }
+  #immigration_form .pro_container .pro_form #phase8 fieldset .pro_form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #immigration_form .pro_container .pro_form #phase8 .pahase8btnBox {
+    display: flex;
+    justify-content: center;
+  }
+  #immigration_form .pro_container .pro_form #phase8 .pahase8btnBox button {
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5px;
+    background-color: red !important;
+  }
+  #immigration_form .pro_container .pro_form #phase9 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase9 .phaseNineContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 20px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase9 .phaseNineContent p {
+    margin-bottom: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase9 fieldset {
+    padding: 20px;
+  }
+  #immigration_form .pro_container .pro_form #phase10 h2 {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase10 .phaseTenContent {
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-top: 0;
+    padding: 0px 20px 40px 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  #immigration_form .pro_container .pro_form #phase10 .phaseTenContent p {
+    margin: 20px 0;
+  }
+  #immigration_form .pro_container .pro_form #phase10 .phaseTenContent .pro_from_group_wraper h3 {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0 15px 0;
+    border-radius: 8px 8px 0 0;
+  }
+  #immigration_form .pro_container .pro_form #phase10 .phaseTenContent .pro_from_group_wraper .family_title {
+    padding: 10px 0 15px 0;
+    margin: 10px 0 22px 0;
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  #form_footer{
+    padding: 20px 0;
+  }
+  .footnote {
+    width: 100%;
+    max-width: 1140px;
+    padding: 15px 0 !important;
+    margin: 0 auto;
+    background-color: var(--primary);
+    text-align: center;
+    font-family: var(--Montserrat);
+    color: var(--white);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .footnote :first-child {
+    margin-bottom: 12px !important;
+  }
+  #form_footer .footnote p{
+    font-size: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    #immigration_form header .mainHeader {
+      padding: 10px;
+      align-items: center;
+      gap: 20px;
+    }
+    #immigration_form header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #immigration_form header nav h1 {
+      order: 1;
+      text-align: center;
+    }
+    #immigration_form header nav .headerBTNBox {
+      width: -moz-fit-content;
+      width: fit-content;
+      justify-content: center;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_label {
+      width: 100% !important;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_label label {
+      display: inline-block;
+      white-space: wrap !important;
+      max-width: 100%;
+      width: 100% !important;
+      color: #0072bc;
+      font-weight: 400;
+      font-size: 16px;;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input {
+      width: 100% !important;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input {
+      width: 100%;
+      padding: 8px;
+      outline: 1px solid transparent;
+      border: 1px solid #b6b6b6;
+      border-radius: 5px;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input:hover {
+      border: 1px solid var(--primary);
+      outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input input:focus {
+      padding: 8px;
+      border-color: var(--primary);
+      outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+      box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+      -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+      -moz-box-shadow: 0px 0px 1px 1px rgba(0, 76, 151, 0.77);
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select {
+      width: 65%;
+      padding: 8px;
+      border-radius: 5px;
+      outline: 1px solid #e2e2e2;
+      border: 1px solid #b6b6b6;
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select:focus {
+      padding: 8px;
+      border-color: var(--primary);
+      outline: #004c97;
+      outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    }
+    #immigration_form .pro_container .pro_form .phaseContent .pro_input_Row .pro_input select:hover {
+      border: 1px solid var(--primary);
+      outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    }
+    .pro_container .pro_form {
+      padding: 10px;
+    }
+    .pro_container .pro_form #phase1 .phaseOneContent {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pro_container .pro_form #phase1 .phaseOneContent .genaralInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pro_container .pro_form #phase1 .phaseOneContent .personalInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pro_container .pro_form .pahasebtnBox {
+      width: 100%;
+      padding-top: 30px !important;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  .pahasebtnBox {
+    width: 100%;
+    padding-top: 30px !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pahasebtnBox button.stepBtn {
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  .pahasebtnBox button.stepBtn:hover {
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    outline: 1px solid var(--bgPrimary);
+    color: var(--primary);
+  }/*# sourceMappingURL=style.css.map */
+
+ 
+  
+  .use-browser-defaults fieldset,
+.use-browser-defaults legend {
+  all: revert;
+}
+fieldset {
+  border: 1px groove var(--borderColor);
+  padding: 0.35em 0.75em 0.625em;
+  margin: 0 2px;
+  position:relative;
+}
+
+legend {
+  display: inline-block;
+  width: fit-content;
+  font-weight: 400;
+  padding: 0;
+  position: absolute;
+  top: -13px;
+  left: 20px;
+  background-color: #F2F2F2;
+  font-size: 16px;
+}
+.pro_h4{
+  font-size: 18px !important;
+}
+.pro_h3{
+  font-size: 20px !important;
+}
+.submitBtn{
+  width: -moz-fit-content;
+    width: fit-content;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+}
+.submitBtn:hover{
+  width: -moz-fit-content;
+    width: fit-content;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 105px !important;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+}
