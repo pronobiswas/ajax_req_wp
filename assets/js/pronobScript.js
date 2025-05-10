@@ -488,11 +488,11 @@ function validatePhase6(){
     });
     // ---validate phase6---
     let full_name_of_prior_spouse = document.getElementById("full_name_of_prior_spouse").value;
-    let date_marrige_began = document.getElementById("date_marrige_began").value;
-    let date_marrige_ended = document.getElementById("date_marrige_ended").value;
-    let place_marrige_ended = document.getElementById("place_marrige_ended").value;
+    let date_prior_marrige_began = document.getElementById("date_prior_marrige_began").value;
+    let date_prior_marrige_ended = document.getElementById("date_prior_marrige_ended").value;
+    let place_prior_marrige_ended = document.getElementById("place_prior_marrige_ended").value;
     let description_of_why_marrige_ended = document.getElementById("description_of_why_marrige_ended").value;
-    if( !full_name_of_prior_spouse || !date_marrige_began || !date_marrige_ended || !place_marrige_ended || !description_of_why_marrige_ended){
+    if( !description_of_why_marrige_ended || !place_prior_marrige_ended || !date_prior_marrige_ended || !date_prior_marrige_began || !full_name_of_prior_spouse){
         isPhase6Validate = "false"
     }else{
         isPhase6Validate = "true"

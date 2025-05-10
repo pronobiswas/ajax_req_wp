@@ -255,6 +255,7 @@ jQuery(document).ready(function ($) {
     // =====sixeth step start here=====55555
     $('#nextBtn6').on('click', function () {
         console.log("Button 6 clicked!");
+        let isValidatePhase6 = "false"
         
         let data6 = {
             action: 'save_phase_six',
@@ -276,12 +277,223 @@ jQuery(document).ready(function ($) {
             description_of_why_marrige_ended2: $('#description_of_why_marrige_ended2').val(),
             
         };
-        console.log(data6);
+        if(!data6.full_name_of_prior_spouse || !data6.date_prior_marrige_began || !data6.date_prior_marrige_ended || !data6.place_prior_marrige_ended || !data6.description_of_why_marrige_ended){
+            isValidatePhase6= "false";
+        }else{isValidatePhase6= "true";}
+        // ==sent_req==
+        if(isValidatePhase6 == "true" && data6){
+            sent_ajax_post_req(data6)
+            
+        }else{
+            setTimeout(function(){
+                console.log("data6");
+                
+            },400)
+        }
         
+        
+    });
+    // ====seventh step start here=====7777
+    $('#nextBtn7').on('click', function () {
+        console.log("Button 7 clicked!");
+        let isValidatePhase7 = "false"
+        
+        let data7 = {
+            action: 'save_phase_seven',
+            nonce: reg_ajax.nonce,
+            name_of_child: $('#name_of_child').val(),
+            child_citizenship: $('#child_citizenship').val(),
+            child_current_address: $('#child_current_address').val(),
+            child_immigration_status: $('#child_immigration_status').val(),
+            child_alien_registration_number: $('#child_alien_registration_number').val(),
+            child_birth_date: $('#child_birth_date').val(),
+            child_average_earnings: $('#child_average_earnings').val(),
+            name_of_child1: $('#name_of_child1').val(),
+            child_citizenship1: $('#child_citizenship1').val(),
+            child_current_address1: $('#child_current_address1').val(),
+            child_immigration_status1: $('#child_immigration_status1').val(),
+            child_alien_registration_number1: $('#child_alien_registration_number1').val(),
+            child_birth_date1: $('#child_birth_date1').val(),
+            child_country_of_birth1: $('#child_country_of_birth1').val(),
+            child_average_earnings1: $('#child_average_earnings1').val(),
+        };
+        
+        if(!data7.name_of_child || !data7.child_citizenship || !data7.child_current_address || !data7.child_immigration_status || !data7.child_alien_registration_number || !data7.child_birth_date || !data7.child_average_earnings){
+            isValidatePhase7= "false";
+        }else{isValidatePhase7= "true";}
+        // ==sent_req==
+        if(isValidatePhase7 == "true" && data7){
+            sent_ajax_post_req(data7)
+        }else{
+            setTimeout(function(){
+                console.log("data7");
+                
+            },400)
+        }
+        
+        
+    });
+    // ====eighth step start here=====8888--lived-in-us
+    $('#nextBtn8').on('click', function () {
+        console.log("Button 8 clicked!");
+        let isValidatePhase8 = "false"
+        
+        let data8 = {
+            action: 'save_phase_eight',
+            nonce: reg_ajax.nonce,
+            street_and_number: $('#street_and_number').val(),
+            resided_from: $('#resided_from').val(),
+            resided_to: $('#resided_to').val(),
+            street_and_number1: $('#street_and_number1').val(),
+            resided_from1: $('#resided_from1').val(),
+            resided_to1: $('#resided_to1').val(),
+            street_and_number2: $('#street_and_number2').val(),
+            resided_from2: $('#resided_from2').val(),
+            resided_to2: $('#resided_to2').val(),
+            
+        };
+        
+        if(!data8.street_and_number || !data8.resided_from || !data8.resided_to ){
+            isValidatePhase8= "false";
+        }else{isValidatePhase8= "true";}
+        console.log(data8);
+        console.log(isValidatePhase8);
+        
+        // ==sent_req==
+        if(isValidatePhase8 == "true" && data8){
+            sent_ajax_post_req(data8)
+        }else{
+            setTimeout(function(){
+                console.log("data8");
+                
+            },400)
+        }
+        
+        
+    });
+    // ====nineth step start here=====9999--emloynent
+    $('#nextBtn9').on('click', function () {
+        let isValidatePhase9 = "false"
+        
+        let data9 = {
+            action: 'save_phase_nine',
+            nonce: reg_ajax.nonce,
+            full_name_of_employer: $('#full_name_of_employer').val(),
+            full_address_of_employer: $('#full_address_of_employer').val(),
+            earning_per_week: $('#earning_per_week').val(),
+            type_of_work_preformed: $('#type_of_work_preformed').val(),
+            start_of_employment_last_10_years: $('#start_of_employment_last_10_years').val(),
+            end_of_employment_last_10_years: $('#end_of_employment_last_10_years').val(),
+            full_name_of_employer1: $('#full_name_of_employer1').val(),
+            full_address_of_employer1: $('#full_address_of_employer1').val(),
+            earning_per_week1: $('#earning_per_week1').val(),
+            type_of_work_preformed1: $('#type_of_work_preformed1').val(),
+            start_of_employment_last_10_years1: $('#start_of_employment_last_10_years1').val(),
+            end_of_employment_last_10_years1: $('#end_of_employment_last_10_years1').val(),
+            full_name_of_employer2: $('#full_name_of_employer2').val(),
+            full_address_of_employer2: $('#full_address_of_employer2').val(),
+            earning_per_week2: $('#earning_per_week2').val(),
+            type_of_work_preformed2: $('#type_of_work_preformed2').val(),
+            start_of_employment_last_10_years2: $('#start_of_employment_last_10_years2').val(),
+            end_of_employment_last_10_years2: $('#end_of_employment_last_10_years2').val(),
+        };
+        if(!data9.full_name_of_employer || !data9.full_address_of_employer || !data9.earning_per_week || !data9.type_of_work_preformed || !data9.start_of_employment_last_10_years || !data9.end_of_employment_last_10_years ){
+            isValidatePhase9= "false";
+        }else{isValidatePhase9= "true";}
+        // ==sent_req==
+        if(isValidatePhase9 == "true" && data9){
+            sent_ajax_post_req(data9)
+        }
+        
+    });
+    // ====tennth step start here=====10--family
+    $('#nextBtnSubmit').on('click', function () {
+        let isValidatePhase10 = "false"
+        
+        let data10 = {
+            action: 'save_phase_ten',
+            nonce: reg_ajax.nonce,
+            father_name: $('#father_name').val(),
+            father_cityzen_of_what_country: $('#father_cityzen_of_what_country').val(),
+            father_relationship_to_me: $('#father_relationship_to_me').val(),
+            father_imigration_status: $('#father_imigration_status').val(),
+            father_alien_registration_number: $('#father_alien_registration_number').val(),
+            father_birth_date: $('#father_birth_date').val(),
+            father_birth_country: $('#father_birth_country').val(),
+
+            mother_name: $('#mother_name').val(),
+            mother_relationship_to_me: $('#mother_relationship_to_me').val(),
+            mother_cityzen_of_what_country: $('#mother_cityzen_of_what_country').val(),
+            mother_imigration_status: $('#mother_imigration_status').val(),
+            mother_alien_registration_number: $('#mother_alien_registration_number').val(),
+            mother_birth_date: $('#mother_birth_date').val(),
+            mother_birth_country: $('#mother_birth_country').val(),
+
+            grandfather_name: $('#grandfather_name').val(),
+            grandfather_cityzen_of_what_country: $('#grandfather_cityzen_of_what_country').val(),
+            grandfather_relationship_to_me: $('#grandfather_relationship_to_me').val(),
+            grandfather_imigration_status: $('#grandfather_imigration_status').val(),
+            grandfather_alien_registration_number: $('#grandfather_alien_registration_number').val(),
+            grandfather_birth_date: $('#grandfather_birth_date').val(),
+            grandfather_birth_country: $('#grandfather_birth_country').val(),
+
+            grandmother_name: $('#grandmother_name').val(),
+            grandmother_cityzen_of_what_country: $('#grandmother_cityzen_of_what_country').val(),
+            grandmother_relationship_to_me: $('#grandmother_relationship_to_me').val(),
+            grandmother_imigration_status: $('#grandmother_imigration_status').val(),
+            grandmother_alien_registration_number: $('#grandmother_alien_registration_number').val(),
+            grandmother_birth_date: $('#grandmother_birth_date').val(),
+            grandmother_birth_country: $('#grandmother_birth_country').val(),
+
+            grandfather_name_mother_side: $('#grandfather_name_mother_side').val(),
+            grandfather_cityzen_of_what_country_mother_side: $('#grandfather_cityzen_of_what_country_mother_side').val(),
+            grandfather_relationship_to_me_mother_side: $('#grandfather_relationship_to_me_mother_side').val(),
+            grandfather_imigration_status_mother_side: $('#grandfather_imigration_status_mother_side').val(),
+            grandfather_alien_registration_number_mother_side: $('#grandfather_alien_registration_number_mother_side').val(),
+            grandfather_birth_date_mother_side: $('#grandfather_birth_date_mother_side').val(),
+            grandfather_birth_country_mother_side: $('#grandfather_birth_country_mother_side').val(),
+
+            grandmother_name_mother_side: $('#grandmother_name_mother_side').val(),
+            grandmother_cityzen_of_what_country_mother_side: $('#grandmother_cityzen_of_what_country_mother_side').val(),
+            grandmother_relationship_to_me_mother_side: $('#grandmother_relationship_to_me_mother_side').val(),
+            grandmother_imigration_status_mother_side: $('#grandmother_imigration_status_mother_side').val(),
+            grandmother_alien_registration_number_mother_side: $('#grandmother_alien_registration_number_mother_side').val(),
+            grandmother_birth_date_mother_side: $('#grandmother_birth_date_mother_side').val(),
+            grandmother_birth_country_mother_side: $('#grandmother_birth_country_mother_side').val(),
+
+            brother_name: $('#brother_name').val(),
+            brother_cityzen_of_what_country: $('#brother_cityzen_of_what_country').val(),
+            brother_relationship_to_me: $('#brother_relationship_to_me').val(),
+            brother_imigration_status: $('#brother_imigration_status').val(),
+            brother_alien_registration_number: $('#brother_alien_registration_number').val(),
+            brother_birth_date: $('#brother_birth_date').val(),
+            brother_birth_country: $('#brother_birth_country').val(),
+        };
+        
+        if(!data10.father_name || !data10.father_cityzen_of_what_country || !data10.father_relationship_to_me || !data10.father_imigration_status || !data10.father_alien_registration_number || !data10.father_birth_date || !data10.father_birth_country || !data10.mother_name || !data10.mother_relationship_to_me || !data10.mother_cityzen_of_what_country || !data10.mother_imigration_status || !data10.mother_alien_registration_number || !data10.mother_birth_date || !data10.mother_birth_country){
+            isValidatePhase10= "false";
+        }else{isValidatePhase10= "true";}
+        console.log("isValidatePhase10",isValidatePhase10);
+        // ==sent_req==
+        if(isValidatePhase10 == "true" && data10){
+            console.log(data10);
+            
+            sent_ajax_post_req(data10)
+        }else{
+            setTimeout(function(){
+                console.log("req jai ni");
+                
+            },500)
+        }
+        
+    });
+    // ====save data on database =======
+    // ====save data on database =======
+    function sent_ajax_post_req(data){
         $.ajax({
             url: reg_ajax.ajax_url,
             type: 'POST',
-            data: data6,
+            data: data,
             success: function (response) {
                 console.log(response);
                 if (response.success) {
@@ -298,6 +510,7 @@ jQuery(document).ready(function ($) {
                 console.log("AJAX request failed." ,err);
             }
         });
-    });
+    }
 });
 
+// ====sent ajax request====

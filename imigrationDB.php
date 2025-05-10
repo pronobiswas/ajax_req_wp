@@ -9,6 +9,10 @@ function create_registration_tables() {
     $forth_table = $wpdb->prefix . 'employment_authorazition';
     $fifth_table = $wpdb->prefix . 'info_about_current_spouse';
     $sixth_table = $wpdb->prefix . 'info_about_prior_spouse';
+    $seventh_table = $wpdb->prefix . 'info_about_child';
+    $eighth_table = $wpdb->prefix . 'info_where_lived_in_us';
+    $nineth_table = $wpdb->prefix . 'info_employment_last_10years';
+    $tenth_table = $wpdb->prefix . 'info_about_family';
     $charset_collate = $wpdb->get_charset_collate();
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     // =========personal information=========
@@ -98,7 +102,7 @@ function create_registration_tables() {
         created_at datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
     ) $charset_collate;";
-
+    // ====information about prior spouse===
     $sql6 = "CREATE TABLE $sixth_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         full_name_of_prior_spouse varchar(255) NOT NULL,
@@ -119,6 +123,117 @@ function create_registration_tables() {
         created_at datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
     ) $charset_collate;";
+     $sql7 = "CREATE TABLE $seventh_table (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name_of_child varchar(255) NOT NULL,
+        child_citizenship varchar(255) NOT NULL,
+        child_current_address varchar(255) NOT NULL,
+        child_immigration_status varchar(255) NOT NULL,
+        child_alien_registration_number varchar(255) NOT NULL,
+        child_birth_date varchar(255) NOT NULL,
+        child_average_earnings varchar(255) NOT NULL,
+        name_of_child1 varchar(255) NOT NULL,
+        child_citizenship1 varchar(255) NOT NULL,
+        child_current_address1 varchar(255) NOT NULL,
+        child_immigration_status1 varchar(255) NOT NULL,
+        child_alien_registration_number1 varchar(255) NOT NULL,
+        child_birth_date1 varchar(255) NOT NULL,
+        child_country_of_birth1 varchar(255) NOT NULL,
+        child_average_earnings1 varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+    $sql8 = "CREATE TABLE $eighth_table (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        street_and_number varchar(255) NOT NULL,
+        resided_from varchar(255) NOT NULL,
+        resided_to varchar(255) NOT NULL,
+        street_and_number1 varchar(255) NOT NULL,
+        resided_from1 varchar(255) NOT NULL,
+        resided_to1 varchar(255) NOT NULL,
+        street_and_number2 varchar(255) NOT NULL,
+        resided_from2 varchar(255) NOT NULL,
+        resided_to2 varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+    $sql9 = "CREATE TABLE $nineth_table (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        full_name_of_employer varchar(255) NOT NULL,
+        full_address_of_employer varchar(255) NOT NULL,
+        earning_per_week varchar(255) NOT NULL,
+        type_of_work_preformed varchar(255) NOT NULL,
+        start_of_employment_last_10_years varchar(255) NOT NULL,
+        end_of_employment_last_10_years varchar(255) NOT NULL,
+        full_name_of_employer1 varchar(255) NOT NULL,
+        full_address_of_employer1 varchar(255) NOT NULL,
+        earning_per_week1 varchar(255) NOT NULL,
+        type_of_work_preformed1 varchar(255) NOT NULL,
+        start_of_employment_last_10_years1 varchar(255) NOT NULL,
+        end_of_employment_last_10_years1 varchar(255) NOT NULL,
+        full_name_of_employer2 varchar(255) NOT NULL,
+        full_address_of_employer2 varchar(255) NOT NULL,
+        earning_per_week2 varchar(255) NOT NULL,
+        type_of_work_preformed2 varchar(255) NOT NULL,
+        start_of_employment_last_10_years2 varchar(255) NOT NULL,
+        end_of_employment_last_10_years2 varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+    $sql10 = "CREATE TABLE $tenth_table (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        father_name varchar(255) NOT NULL,
+        father_cityzen_of_what_country varchar(255) NOT NULL,
+        father_relationship_to_me varchar(255) NOT NULL,
+        father_imigration_status varchar(255) NOT NULL,
+        father_alien_registration_number varchar(255) NOT NULL,
+        father_birth_date varchar(255) NOT NULL,
+        father_birth_country varchar(255) NOT NULL,
+        mother_name varchar(255) NOT NULL,
+        mother_relationship_to_me varchar(255) NOT NULL,
+        mother_cityzen_of_what_country varchar(255) NOT NULL,
+        mother_imigration_status varchar(255) NOT NULL,
+        mother_alien_registration_number varchar(255) NOT NULL,
+        mother_birth_date varchar(255) NOT NULL,
+        mother_birth_country varchar(255) NOT NULL,
+        grandfather_name varchar(255) NOT NULL,
+        grandfather_cityzen_of_what_country varchar(255) NOT NULL,
+        grandfather_relationship_to_me varchar(255) NOT NULL,
+        grandfather_imigration_status varchar(255) NOT NULL,
+        grandfather_alien_registration_number varchar(255) NOT NULL,
+        grandfather_birth_date varchar(255) NOT NULL,
+        grandfather_birth_country varchar(255) NOT NULL,
+        grandmother_name varchar(255) NOT NULL,
+        grandmother_cityzen_of_what_country varchar(255) NOT NULL,
+        grandmother_relationship_to_me varchar(255) NOT NULL,
+        grandmother_imigration_status varchar(255) NOT NULL,
+        grandmother_alien_registration_number varchar(255) NOT NULL,
+        grandmother_birth_date varchar(255) NOT NULL,
+        grandmother_birth_country varchar(255) NOT NULL,
+        grandfather_name_mother_side varchar(255) NOT NULL,
+        grandfather_cityzen_of_what_country_mother_side varchar(255) NOT NULL,
+        grandfather_relationship_to_me_mother_side varchar(255) NOT NULL,
+        grandfather_imigration_status_mother_side varchar(255) NOT NULL,
+        grandfather_alien_registration_number_mother_side varchar(255) NOT NULL,
+        grandfather_birth_date_mother_side varchar(255) NOT NULL,
+        grandfather_birth_country_mother_side varchar(255) NOT NULL,
+        grandmother_name_mother_side varchar(255) NOT NULL,
+        grandmother_relationship_to_me_mother_side varchar(255) NOT NULL,
+        grandmother_alien_registration_number_mother_side varchar(255) NOT NULL,
+        grandmother_birth_date_mother_side varchar(255) NOT NULL,
+        grandmother_birth_country_mother_side varchar(255) NOT NULL,
+        brother_name varchar(255) NOT NULL,
+        brother_cityzen_of_what_country varchar(255) NOT NULL,
+        brother_relationship_to_me varchar(255) NOT NULL,
+        brother_imigration_status varchar(255) NOT NULL,
+        brother_alien_registration_number varchar(255) NOT NULL,
+        brother_birth_date varchar(255) NOT NULL,
+        brother_birth_country varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+
+    
 
     dbDelta($sql1);
     dbDelta($sql2);
@@ -126,6 +241,10 @@ function create_registration_tables() {
     dbDelta($sql4);
     dbDelta($sql5);
     dbDelta($sql6);
+    dbDelta($sql7);
+    dbDelta($sql8);
+    dbDelta($sql9);
+    dbDelta($sql10);
     
 }
 add_action('admin_init', 'create_registration_tables');
