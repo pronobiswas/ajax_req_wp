@@ -5,7 +5,7 @@
         check_ajax_referer('register_nonce', 'nonce');
     
         global $wpdb;
-        $table = $wpdb->prefix . 'register1';
+        $table = $wpdb->prefix . 'personal_info';
         
     
         $data = [

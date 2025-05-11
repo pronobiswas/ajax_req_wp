@@ -3,7 +3,7 @@
 
 function create_registration_tables() {
     global $wpdb;
-    $first_table = $wpdb->prefix . 'register1';
+    $first_table = $wpdb->prefix . 'personal_info';
     $second_table = $wpdb->prefix . 'entryintous';
     $third_table = $wpdb->prefix . 'continuous_residence';
     $forth_table = $wpdb->prefix . 'employment_authorazition';

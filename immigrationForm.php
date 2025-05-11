@@ -30,14 +30,23 @@
         </p>
       </div>
       <!-- ===page option=== -->
-      <div class="pageOption" id="pageOptions">
-        <span id="outoftext">page <span id="pageNum">1</span> of 3</span>
-        <span>&#11206;</span>
-        <div class="formPagenetion hidden">
+      <div  id="pageOptions">
+        <div class="pageOption">
+          <span id="outoftext">page <span id="pageNum">1</span> of 3</span>
+          <span>&#11206;</span>
+        </div>
+        <div id="formPagenetion" class=" hidden">
           <ol>
-            <li onclick="pageOne()">Accessibility</li>
-            <li onclick="pageTwo()">Address</li>
-            <li onclick="pageThree()">Personal Info</li>
+            <li onclick="handle_phase_navigation('phase1' , 'isValidatePhase1')" >personal</li>
+            <li onclick="handle_phase_navigation('phase2', 'isValidatePhase2')" >Entry Into US</li>
+            <li onclick="handle_phase_navigation('phase3' ,'isValidatePhase3')" >Continious residence</li>
+            <li onclick="handle_phase_navigation('phase4')" >Emplyment Authorization</li>
+            <li onclick="handle_phase_navigation('phase5')" >Current Spouse</li>
+            <li onclick="handle_phase_navigation('phase6')" >Prior Maggaige</li>
+            <li onclick="handle_phase_navigation('phase7')" >Child Info</li>
+            <li onclick="handle_phase_navigation('phase8')" >Living Info</li>
+            <li onclick="handle_phase_navigation('phase9')" >Employment Info</li>
+            <li onclick="handle_phase_navigation('phase10')" >Famlily Info</li>
           </ol>
         </div>
       </div>
@@ -48,7 +57,7 @@
     <div class="pro_form">
       <!-- =========PERSONAL INFORMATION========= -->
       <form id="cityzenPth_form" method="POST">
-        <section id="phase1" class="hidden">
+        <section id="phase1" class="pro_form_phase ">
           <h2 class="sectionHeading">PERSONAL INFORMATION</h2>
           <div class="phaseOneContent phaseContent">
             <!-- $$$$$$$$$genaralInfo$$$$$$$$$$$ -->
@@ -163,11 +172,11 @@
               <!-- Country of Citizenship -->
               <div class="pro_input_Row">
                 <div class="pro_label">
-                  <label for="Country_of_Citizenship">Place of Birth (city/town,
+                  <label for="country_of_citizenship">Place of Birth (city/town,
                     state/province/country):</label>
                 </div>
                 <div class="pro_input">
-                  <input type="text" name="country_of_citizenship" id="Country_of_Citizenship" placeholder="Country of Citizenship" required />
+                  <input type="text" name="country_of_citizenship" id="country_of_citizenship" placeholder="Country of Citizenship" required />
                 </div>
               </div>
               <!-- Marital Status -->
@@ -188,9 +197,8 @@
             </div>
           </div>
         </section>
-
         <!-- =====ENTRY INTO UNITED STATES phase2 ======== -->
-        <section id="phase2" class="hidden">
+        <section id="phase2" class="pro_form_phase hidden">
           <h2>ENTRY INTO UNITED STATES</h2>
           <div class="phaseTwoContent phaseContent">
 
@@ -405,7 +413,7 @@
           </div>
         </section>
         <!-- ======CONTINUOUS RESIDENCE IN THE UNITED STATES ======= -->
-        <section id="phase3" class="hidden">
+        <section id="phase3" class="pro_form_phase hidden">
           <h2>CONTINUOUS RESIDENCE IN THE UNITED STATES</h2>
           <div class="phaseThreeContent phaseContent">
             <div class="radioRow">
@@ -624,7 +632,7 @@
           </div>
         </section>
         <!-- =======Employment Authorization =========== -->
-        <section id="phase4" class="hidden">
+        <section id="phase4" class="pro_form_phase hidden">
 
           <h2>EMPLOYMENT AUTHORIZATION</h2>
           <div class="phaseFourContent phaseContent">
@@ -688,7 +696,7 @@
           </div>
         </section>
         <!-- =======INFORMATION ABOUT YOUR CURRENT SPOUSE====== -->
-        <section id="phase5" class="hidden">
+        <section id="phase5" class="pro_form_phase hidden">
           <h2>INFORMATION ABOUT YOUR CURRENT SPOUSE</h2>
           <div class="phaseFiveContent phaseContent">
 
@@ -1247,7 +1255,7 @@
           </div>
         </section>
         <!-- =====INFORMATION ABOUT YOUR PRIOR SPOUSE==== -->
-        <section id="phase6" class="hidden">
+        <section id="phase6" class="pro_form_phase hidden">
           <h2>INFORMATION ABOUT YOUR PRIOR MARRIAGE</h2>
           <div class="phaseSixContent phaseContent">
 
@@ -1422,7 +1430,7 @@
           </div>
         </section>
         <!-- ==========INFORMATION ABOUT YOUR CHILDREN================= -->
-        <section id="phase7" class="hidden">
+        <section id="phase7" class="pro_form_phase hidden">
           <h2>INFORMATION ABOUT YOUR CHILDREN</h2>
           <!-- <p>Information about all your children</p> -->
           <!-- <div class="pro_table_warper">
@@ -1868,7 +1876,7 @@
           </div>
         </section>
         <!-- ======INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US====== -->
-        <section id="phase8" class="hidden">
+        <section id="phase8" class="pro_form_phase hidden">
           <h2>INFORMATION ABOUT WHERE YOU LIVED SINCE BEING IN THE US</h2>
           <div class="phaseEightContent phaseContent">
 
@@ -2006,7 +2014,7 @@
           </div>
         </section>
         <!-- =======EMPLOYMENT INFORMATION FOR LAST 10 YEARS======== -->
-        <section id="phase9" class="hidden">
+        <section id="phase9" class="pro_form_phase hidden">
           <h2>EMPLOYMENT INFORMATION FOR LAST 10 YEARS</h2>
           <!-- <div class="hidden">
                  <div class="pro_table">
@@ -2219,7 +2227,7 @@
           </div>
         </section>
         <!-- ======INFORMATION ABOUT YOUR FAMILY :========== -->
-        <section id="phase10" class="">
+        <section id="phase10" class="pro_form_phase hidden">
           <h2>INFORMATION ABOUT YOUR FAMILY :</h2>
           <div class="phaseTenContent phaseContent">
             <p>

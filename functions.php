@@ -86,8 +86,10 @@ include_once get_stylesheet_directory().'/ajax_req_handeler.php';
 function enqueue_my_custom_js() {
     wp_enqueue_script(
         wp_enqueue_script('jquery-ui', get_stylesheet_directory_uri() . '/assets/plugins/jquery-ui/jquery-ui.min.js', array('jquery'), null, true),
-        wp_enqueue_script('pronob-script', get_stylesheet_directory_uri() . '/assets/js/pronobScript.js', array('jquery'), '1.0.0', true)
+        wp_enqueue_script('pronob-script', get_stylesheet_directory_uri() . '/assets/js/pronobScript.js', array('jquery'), '1.0.0', true),
+        
     );
+    wp_enqueue_script('jspdf-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', array(), '2.5.1', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_my_custom_js');
 

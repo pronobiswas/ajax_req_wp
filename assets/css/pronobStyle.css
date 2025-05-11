@@ -56,7 +56,7 @@
   }
   #immigration_form .pro_input_Row .pro_input input:hover {
     border: 1px solid var(--primary);
-    outline: 2px solid rgba(3, 123, 243, 0.5568627451);
+    outline: 2px solid rgba(3, 123, 243, 0.557);
   }
   #immigration_form .pro_input_Row .pro_input input:focus {
     padding: 8px;
@@ -278,7 +278,7 @@
       order: 1;
     }
   }
-  #immigration_form header .heading .pageOption {
+  #immigration_form header .heading #pageOptions {
     width: 100px;
     font-size: 14px;
     padding: 4px 12px;
@@ -294,30 +294,32 @@
     border: 2px solid gray;
     cursor: pointer;
   }
-  #immigration_form header .heading .pageOption .formPagenetion {
+  #immigration_form header .heading #pageOptions #formPagenetion {
     position: absolute;
     width: 120%;
     top: 29px;
     right: -2px;
-    border: 2px solid gray;
+    border: 2px solid #003E67;
     border-radius: 5px;
     color: #fff;
+    border-radius: 4px;
   }
-  #immigration_form header .heading .pageOption .formPagenetion ol {
-    background-color: gray;
+  #immigration_form header .heading #pageOptions #formPagenetion ol {
+    background-color: #1E90FF;
     list-style-position: inside;
+    border-radius: 3px;
   }
-  #immigration_form header .heading .pageOption .formPagenetion ol li {
+  #immigration_form header .heading #pageOptions #formPagenetion ol .active_phase_indicator{
+    background-color: #00a700;
+  }
+  #immigration_form header .heading #pageOptions #formPagenetion ol li {
     width: 100%;
     padding: 4px;
   }
-  #immigration_form header .heading .pageOption .formPagenetion ol li:hover {
-    background: rgba(0, 0, 0, 0.1176470588);
+  #immigration_form header .heading #pageOptions #formPagenetion ol li:hover {
+    background: rgb(255, 255, 255);
     color: var(--primary);
     cursor: pointer;
-  }
-  #immigration_form header .heading .pageOption .formPagenetion ol :first-child {
-    background: #004c97;
   }
   #immigration_form header button {
     border: none;

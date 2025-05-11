@@ -1,9 +1,6 @@
 jQuery(document).ready(function($) {
     // Handle the form submission on button click
-    $('#nextBtn1').on('click', function(e) {
-        e.preventDefault(); // Prevent the default form submission
-
-        // Get the form data
+    $('#nextBtn1').on('click', function() {
         var formData = {
             full_name: $('#full_name').val(),
             other_name: $('#other_name').val(),
@@ -20,11 +17,9 @@ jQuery(document).ready(function($) {
             country_of_citizenship: $('#Country_of_Citizenship').val(),
             marital_status: $('#Marital_Status').val()
         };
+        console.log("hi");
+        return
 
-        // Debugging: Log the form data
-        console.log(formData);
-
-        // Send the data to WordPress using AJAX
         $.ajax({
             url: astraChildAjax.ajax_url,
             type: 'POST',
@@ -34,10 +29,10 @@ jQuery(document).ready(function($) {
                 form_data: formData
             },
             success: function(response) {
-                console.log(response); // Debugging: Log the response from AJAX
+                console.log(response);
                 if (response.success) {
                     alert("Data saved successfully!");
-                    // Optionally, you can redirect the user or load the next step
+                    
                 } else {
                     alert("There was an error saving the data.");
                 }
