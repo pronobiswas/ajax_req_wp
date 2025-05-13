@@ -34,7 +34,7 @@ function handle_phase_navigation(phaseId , validationFlag ){
       phase.classList.add('hidden')
     });
     let unlock_phase = document.getElementById(phaseId);
-    if(unlock_phase && validationFlag == "true"){
+    if(unlock_phase){
         unlock_phase.classList.remove('hidden');
     }else{
       document.getElementById('phase1').classList.remove('hidden')
@@ -213,7 +213,6 @@ function validatePhaseOne() {
   } else {
     isValidatePhase1 = "true";
   }
-  return
   // ----go to next step-----
   if (isValidatePhase1 == "true") {
     phase1.classList.add("hidden");
@@ -730,7 +729,7 @@ function handlePhase8Button() {
     document.getElementById("phase8").classList.add("hidden");
     document.getElementById("phase9").classList.remove("hidden");
   }
-}
+} 
 // ############ PHASE8 END HERE ############
 // $$$$$$$$$$$ PHASE9 START HERE $$$$$$$$$$$$$$
 const phase9 = document.getElementById("phase9");

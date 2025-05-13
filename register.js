@@ -38,10 +38,17 @@
 // ---------------  new try ----------------
 jQuery(document).ready(function ($) {
     let isValidatePhaseOne = false;
+    let isValidatePhaseTwo = false;
+    let isValidatePhaseThree = false;
+    let isValidatePhaseFour = false;
+    let isValidatePhaseFive = false;
+    let isValidatePhaseSix = false;
+    let isValidatePhaseSeven = false;
+    let isValidatePhaseEight = false;
+    let isValidatePhaseNine = false;
   // =====first step start here=====11111111
   $("#nextBtn1").on("click", function () {
     // ======collect data from first phase======
-    
     let data = {
       action: "handle_register_form",
       nonce: reg_ajax.nonce,
@@ -58,7 +65,7 @@ jQuery(document).ready(function ($) {
       date_of_birth: $("#date_of_birth").val(),
       place_of_birth: $("#place_of_birth").val(),
       country_of_citizenship: $("#country_of_citizenship").val(),
-      marital_status: $("#Marital_Status").val(),
+      marital_status: $("#marital_status").val(),
     };
     if (
       !data.full_name ||
@@ -80,13 +87,9 @@ jQuery(document).ready(function ($) {
     } else {
       isValidatePhaseOne = true;
     }
-
-    console.log(isValidatePhaseOne);
-
-    console.log(data.full_name);
-
-    return;
-    sent_ajax_post_req(data);
+    if(isValidatePhaseOne){
+      sent_ajax_post_req(data);
+    }
   });
   // =====second step start here=====222222
   $("#nextBtn2").on("click", function () {
@@ -98,37 +101,13 @@ jQuery(document).ready(function ($) {
       how_to_enter: $("#how_to_enter").val(),
       place_of_entry: $("#place_of_entry").val(),
       have_you_ever_left_the_US: $("#have_you_ever_left_the_US").val(),
-      reason_for_leaving: $("#reason_for_leaving").val(),
-      departure_date1: $("#departure_date1").val(),
-      return_date1: $("#return_date1").val(),
     };
-
-    $.ajax({
-      url: reg_ajax.ajax_url,
-      type: "POST",
-      data: data2,
-      success: function (response) {
-        console.log(response);
-        if (response.success) {
-          $("#register-message").html(
-            '<p style="color:green;">' + response.data + "</p>"
-          );
-          $("#cityzenPth_form")[0].reset();
-          console.log("Data saved to DB successfully.");
-        } else {
-          $("#register-message").html(
-            '<p style="color:red;">' + response.data + "</p>"
-          );
-          console.log("Data saving failed.");
-        }
-      },
-      error: function (err) {
-        $("#register-message").html(
-          '<p style="color:red;">An error occurred. Please try again.</p>'
-        );
-        console.log("AJAX request failed.", err);
-      },
-    });
+    if(!data2.date_of_entry || !data2.how_to_enter || !data2.place_of_entry || !data2.have_you_ever_left_the_US ){
+      isValidatePhaseTwo = false
+    }else{isValidatePhaseTwo = true}
+    if(isValidatePhaseTwo){
+      sent_ajax_post_req(data2)
+    }
   });
   // =====third step start here=====33333333
   $("#nextBtn3").on("click", function () {
@@ -151,39 +130,16 @@ jQuery(document).ready(function ($) {
       where_education_received: $("#where_education_received").val(),
       why_left_us: $("#why_left_us").val(),
     };
-    console.log(data3);
-
-    $.ajax({
-      url: reg_ajax.ajax_url,
-      type: "POST",
-      data: data3,
-      success: function (response) {
-        console.log(response);
-        if (response.success) {
-          $("#register-message").html(
-            '<p style="color:green;">' + response.data + "</p>"
-          );
-          $("#cityzenPth_form")[0].reset();
-          console.log("Data saved to DB successfully.");
-        } else {
-          $("#register-message").html(
-            '<p style="color:red;">' + response.data + "</p>"
-          );
-          console.log("Data saving failed.");
-        }
-      },
-      error: function (err) {
-        $("#register-message").html(
-          '<p style="color:red;">An error occurred. Please try again.</p>'
-        );
-        console.log("AJAX request failed.", err);
-      },
-    });
+    if(!data3.isContinuousResidence || !data3.current_education_status || !data3.where_education_received || !data3.us_military || !data3.left_US){
+      isValidatePhaseThree = false
+    }else{isValidatePhaseThree = true}
+    
+    if(isValidatePhaseThree){
+      sent_ajax_post_req(data3)
+    }
   });
   // =====fourth step start here=====4444444
   $("#nextBtn4").on("click", function () {
-    console.log("Button 4 clicked!");
-
     let data4 = {
       action: "save_phase_four",
       nonce: reg_ajax.nonce,
@@ -192,39 +148,11 @@ jQuery(document).ready(function ($) {
       current_emloyer_address: $("#current_emloyer_address").val(),
       why_work_auth: $("#why_work_auth").val(),
     };
-    console.log(data4);
-
-    $.ajax({
-      url: reg_ajax.ajax_url,
-      type: "POST",
-      data: data4,
-      success: function (response) {
-        console.log(response);
-        if (response.success) {
-          $("#register-message").html(
-            '<p style="color:green;">' + response.data + "</p>"
-          );
-          $("#cityzenPth_form")[0].reset();
-          console.log("Data saved to DB successfully.");
-        } else {
-          $("#register-message").html(
-            '<p style="color:red;">' + response.data + "</p>"
-          );
-          console.log("Data saving failed.");
-        }
-      },
-      error: function (err) {
-        $("#register-message").html(
-          '<p style="color:red;">An error occurred. Please try again.</p>'
-        );
-        console.log("AJAX request failed.", err);
-      },
-    });
+    if(!data4.current_annual_income || !data4.current_emloyer_name || !data4.current_emloyer_address || !data4.why_work_auth){isValidatePhaseFour = false}else{isValidatePhaseFour = true};
+    if(isValidatePhaseFour){sent_ajax_post_req(data4)}
   });
   // =====fifth step start here=====55555
   $("#nextBtn5").on("click", function () {
-    console.log("Button 5 clicked!");
-
     let data5 = {
       action: "save_phase_five",
       nonce: reg_ajax.nonce,
@@ -256,39 +184,14 @@ jQuery(document).ready(function ($) {
       start_of_employment: $("#start_of_employment").val(),
       end_of_employment: $("#end_of_employment").val(),
     };
-    console.log(data5);
-
-    $.ajax({
-      url: reg_ajax.ajax_url,
-      type: "POST",
-      data: data5,
-      success: function (response) {
-        console.log(response);
-        if (response.success) {
-          $("#register-message").html(
-            '<p style="color:green;">' + response.data + "</p>"
-          );
-          $("#cityzenPth_form")[0].reset();
-          console.log("Data saved to DB successfully.");
-        } else {
-          $("#register-message").html(
-            '<p style="color:red;">' + response.data + "</p>"
-          );
-          console.log("Data saving failed.");
-        }
-      },
-      error: function (err) {
-        $("#register-message").html(
-          '<p style="color:red;">An error occurred. Please try again.</p>'
-        );
-        console.log("AJAX request failed.", err);
-      },
-    });
+    // -----validate-----
+    if(!data5.spouse_name || !data5.cityzenship_of_spouse || !data5.current_address_of_spouse || !data5.spouseImmigration || !data5.spouse_aline_registration_number || !data5.spouse_birth_date || !data5.spouse_social_security_number || !data5.date_of_marriage || !data5.place_of_marriage || !data5.spouse_maiden_name || !data5.place_spouse_first_entered_us || !data5.date_spouse_first_entered_us || !data5.date_spouse_become_us_citizen || !data5.full_name_of_spouse_employer || !data5.full_address_of_spouse_employer || !data5.earning_per_week_of_spouse || !data5.type_of_work_preformed_by_spouse || !data5.start_of_employment || !data5.end_of_employment){isValidatePhaseFive = false}else{isValidatePhaseFive = true};
+    // ----sent ajax req----
+    if(isValidatePhaseFive){sent_ajax_post_req(data5)}else{console.log("please fill the form");}
   });
   // =====sixeth step start here=====55555
   $("#nextBtn6").on("click", function () {
-    console.log("Button 6 clicked!");
-    let isValidatePhase6 = "false";
+
 
     let data6 = {
       action: "save_phase_six",
@@ -322,12 +225,12 @@ jQuery(document).ready(function ($) {
       !data6.place_prior_marrige_ended ||
       !data6.description_of_why_marrige_ended
     ) {
-      isValidatePhase6 = "false";
+      isValidatePhaseSix = false;
     } else {
-      isValidatePhase6 = "true";
+      isValidatePhaseSix = true;
     }
     // ==sent_req==
-    if (isValidatePhase6 == "true" && data6) {
+    if (isValidatePhaseSix && data6) {
       sent_ajax_post_req(data6);
     } else {
       setTimeout(function () {
@@ -337,9 +240,6 @@ jQuery(document).ready(function ($) {
   });
   // ====seventh step start here=====7777
   $("#nextBtn7").on("click", function () {
-    console.log("Button 7 clicked!");
-    let isValidatePhase7 = "false";
-
     let data7 = {
       action: "save_phase_seven",
       nonce: reg_ajax.nonce,
@@ -351,6 +251,7 @@ jQuery(document).ready(function ($) {
         "#child_alien_registration_number"
       ).val(),
       child_birth_date: $("#child_birth_date").val(),
+      child_country_of_birth: $("#child_country_of_birth").val(),
       child_average_earnings: $("#child_average_earnings").val(),
       name_of_child1: $("#name_of_child1").val(),
       child_citizenship1: $("#child_citizenship1").val(),
@@ -371,26 +272,24 @@ jQuery(document).ready(function ($) {
       !data7.child_immigration_status ||
       !data7.child_alien_registration_number ||
       !data7.child_birth_date ||
+      !data7.child_country_of_birth ||
       !data7.child_average_earnings
     ) {
-      isValidatePhase7 = "false";
+      isValidatePhaseSeven = false;
     } else {
-      isValidatePhase7 = "true";
+      isValidatePhaseSeven = true;
     }
     // ==sent_req==
-    if (isValidatePhase7 == "true" && data7) {
+    if (isValidatePhaseSeven && data7) {
       sent_ajax_post_req(data7);
     } else {
       setTimeout(function () {
-        console.log("data7");
+        console.log("please fill the form");
       }, 400);
     }
   });
   // ====eighth step start here=====8888--lived-in-us
   $("#nextBtn8").on("click", function () {
-    console.log("Button 8 clicked!");
-    let isValidatePhase8 = "false";
-
     let data8 = {
       action: "save_phase_eight",
       nonce: reg_ajax.nonce,
@@ -406,15 +305,12 @@ jQuery(document).ready(function ($) {
     };
 
     if (!data8.street_and_number || !data8.resided_from || !data8.resided_to) {
-      isValidatePhase8 = "false";
+      isValidatePhaseEight = false;
     } else {
-      isValidatePhase8 = "true";
+      isValidatePhaseEight = true;
     }
-    console.log(data8);
-    console.log(isValidatePhase8);
-
     // ==sent_req==
-    if (isValidatePhase8 == "true" && data8) {
+    if (isValidatePhaseEight && data8) {
       sent_ajax_post_req(data8);
     } else {
       setTimeout(function () {
@@ -424,8 +320,6 @@ jQuery(document).ready(function ($) {
   });
   // ====nineth step start here=====9999--emloynent
   $("#nextBtn9").on("click", function () {
-    let isValidatePhase9 = "false";
-
     let data9 = {
       action: "save_phase_nine",
       nonce: reg_ajax.nonce,
@@ -468,12 +362,12 @@ jQuery(document).ready(function ($) {
       !data9.start_of_employment_last_10_years ||
       !data9.end_of_employment_last_10_years
     ) {
-      isValidatePhase9 = "false";
+      isValidatePhaseNine = false;
     } else {
-      isValidatePhase9 = "true";
+      isValidatePhaseNine = true;
     }
     // ==sent_req==
-    if (isValidatePhase9 == "true" && data9) {
+    if (isValidatePhaseNine && data9) {
       sent_ajax_post_req(data9);
     }
   });

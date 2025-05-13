@@ -30,23 +30,23 @@
         </p>
       </div>
       <!-- ===page option=== -->
-      <div  id="pageOptions">
+      <div id="pageOptions">
         <div class="pageOption">
           <span id="outoftext">page <span id="pageNum">1</span> of 3</span>
           <span>&#11206;</span>
         </div>
         <div id="formPagenetion" class=" hidden">
           <ol>
-            <li onclick="handle_phase_navigation('phase1' , 'isValidatePhase1')" >personal</li>
-            <li onclick="handle_phase_navigation('phase2', 'isValidatePhase2')" >Entry Into US</li>
-            <li onclick="handle_phase_navigation('phase3' ,'isValidatePhase3')" >Continious residence</li>
-            <li onclick="handle_phase_navigation('phase4')" >Emplyment Authorization</li>
-            <li onclick="handle_phase_navigation('phase5')" >Current Spouse</li>
-            <li onclick="handle_phase_navigation('phase6')" >Prior Maggaige</li>
-            <li onclick="handle_phase_navigation('phase7')" >Child Info</li>
-            <li onclick="handle_phase_navigation('phase8')" >Living Info</li>
-            <li onclick="handle_phase_navigation('phase9')" >Employment Info</li>
-            <li onclick="handle_phase_navigation('phase10')" >Famlily Info</li>
+            <li onclick="handle_phase_navigation('phase1' , 'isValidatePhase1')">personal</li>
+            <li onclick="handle_phase_navigation('phase2', 'isValidatePhase2')">Entry Into US</li>
+            <li onclick="handle_phase_navigation('phase3' ,'isValidatePhase3')">Continious residence</li>
+            <li onclick="handle_phase_navigation('phase4')">Emplyment Authorization</li>
+            <li onclick="handle_phase_navigation('phase5')">Current Spouse</li>
+            <li onclick="handle_phase_navigation('phase6')">Prior Maggaige</li>
+            <li onclick="handle_phase_navigation('phase7')">Child Info</li>
+            <li onclick="handle_phase_navigation('phase8')">Living Info</li>
+            <li onclick="handle_phase_navigation('phase9')">Employment Info</li>
+            <li onclick="handle_phase_navigation('phase10')">Famlily Info</li>
           </ol>
         </div>
       </div>
@@ -201,7 +201,6 @@
         <section id="phase2" class="pro_form_phase hidden">
           <h2>ENTRY INTO UNITED STATES</h2>
           <div class="phaseTwoContent phaseContent">
-
             <div class="pro_input_wraper">
               <!-- date_of_entry -->
               <div class="pro_input_Row">
@@ -260,7 +259,6 @@
                 </div>
               </div>
             </div>
-            <!-- If yes, please provide the following information -->
             <!-- Reason for Leaving table -->
             <div id="ReasonforLeavingTable" class="hidden">
               <h4 class="pro_h4">If yes, please provide the following information:</h4>
@@ -360,51 +358,6 @@
                   </div>
                 </div>
               </fieldset>
-
-
-              <!-- <table id="reason_for_leaving">
-                     <tr>
-                       <th>
-                         <label for="Reason_for_Leaving">Reason for Leaving</label>
-                       </th>
-                       <th>
-                         <label for="departure_date1">
-                           <p>Date You Left</p>
-                           <p>(month/year)</p>
-                         </label>
-                       </th>
-                       <th>
-                         <label for="departure_date1">
-                           <p>Date You Left</p>
-                           <p>(month/year)</p>
-                         </label>
-                       </th>
-                     </tr>
-                     <tr>
-                       <td>
-                         <input type="text" name="reason1" id="Reason_for_Leaving" />
-                       </td>
-                       <td>
-                         <input
-                           type="date"
-                           name="departure_date1"
-                           id="departure_date1"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="date"
-                           name="departure_date1"
-                           id="departure_date1"
-                         />
-                       </td>
-                     </tr>
-                     <tr>
-                       <td><input type="text" name="reason2" /></td>
-                       <td><input type="date" name="departure_date2" /></td>
-                       <td><input type="date" name="return_date2" /></td>
-                     </tr>
-                   </table> -->
             </div>
           </div>
           <div class="pahasebtnBox">
@@ -416,6 +369,7 @@
         <section id="phase3" class="pro_form_phase hidden">
           <h2>CONTINUOUS RESIDENCE IN THE UNITED STATES</h2>
           <div class="phaseThreeContent phaseContent">
+
             <div class="radioRow">
               <h4 class="pro_h4">Are you continuous Residence in the United State</h4>
               <div>
@@ -436,8 +390,8 @@
                   value="yes" />
               </div>
             </div>
-            <div id="residences" class="hidden">
 
+            <div id="residences" class="hidden">
               <div class="residence_detail_wraper">
                 <fieldset>
                   <div class="pro_form_group">
@@ -537,14 +491,13 @@
                     </div>
                   </div>
                 </fieldset>
-
               </div>
             </div>
+
             <!-- SCHOOL/MILITARY STATUS -->
             <div class="educationORmilitary">
               <h3 class="pro_h3">SCHOOL/MILITARY STATUS</h3>
               <!-- Current Education Status -->
-
               <div class="pro_input_Row">
                 <div class="pro_label">
                   <label for="current_education_status">Current Education Status</label>
@@ -685,9 +638,6 @@
                   id="why_work_auth"
                   rows="6"></textarea>
               </div>
-
-
-
             </div>
           </div>
           <div class=" pahasebtnBox">
@@ -702,210 +652,6 @@
 
             <!-- <p>Information about all your current spouse :</p> -->
             <div id="currentSpouse">
-              <!-- <table>
-                     <tr>
-                       <th>
-                         <label for="spouse_name"
-                           >NAme of Spouse :(last,First,Middle):</label
-                         >
-                       </th>
-                       <th>
-                         <label for="cityzenship_of_spouse"
-                           >Spouse Cityzenship of What Country:</label
-                         >
-                       </th>
-                       <th>
-                         <label for="current_address_of_spouse"
-                           >Spouse Current Address(City and Country):</label
-                         >
-                       </th>
-                       <th>
-                         <label for="spouseImmigration"
-                           >Immigration Status of Spouse</label
-                         >
-                       </th>
-                     </tr>
-                     <tr>
-                       <td>
-                         <input
-                           type="text"
-                           name="spouse_name"
-                           id="spouse_name"
-                           required
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           id="cityzenship_of_spouse"
-                           name="cityzenship_of_spouse"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           id="current_address_of_spouse"
-                           name="current_address_of_spouse"
-                         />
-                       </td>
-                       <td rowspan="3">
-                         <textarea
-                           rows="6"
-                           name="spouseImmigration"
-                           id="spouseImmigration"
-                         ></textarea>
-                       </td>
-                     </tr>
-                     <tr>
-                       <td>
-                         <label for="spouse_aline_registration_number"
-                           >Spouse Aline Registration Number</label
-                         >
-                       </td>
-                       <td>
-                         <label for="spouse_birth_date"
-                           >Spouse Birth Date :(Month,Day,Year)</label
-                         >
-                       </td>
-                       <td>
-                         <label for="spouse_country_of_birth"
-                           >Spouse Country of Birth :(City and Country)</label
-                         >
-                       </td>
-                     </tr>
-                     <tr>
-                       <td>
-                         <input
-                           type="text"
-                           name="spouse_aline_registration_number"
-                           id="spouse_aline_registration_number"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="spouse_birth_date"
-                           id="spouse_birth_date"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="spouse_country_of_birth"
-                           id="spouse_country_of_birth"
-                         />
-                       </td>
-                     </tr>
-                     <tr>
-                       <td colspan="4" class="flexible">
-                         <div class="tdInputRow">
-                           <label for="spouse_earn_per_week"
-                             >Spouse's Aaverage Earnings per Week <b>: $</b></label
-                           >
-                           <input
-                             type="text"
-                             id="spouse_earn_per_week"
-                             name="spouse_earn_per_week"
-                             required
-                           />
-                         </div>
-                       </td>
-                     </tr>
-                     <tr>
-                       <td colspan="4" class="flexible">
-                         <div class="tdInputRow">
-                           <label for="spouse_social_security_number"
-                             >Spouse's US Social Scecurity Number:</label
-                           >
-                           <input
-                             type="text"
-                             id="spouse_social_security_number"
-                             name="spouse_social_security_number"
-                           />
-                         </div>
-                       </td>
-                     </tr>
-                   </table>
-                   <table>
-                     <tr>
-                       <td>
-                         <label for="date_of_marriage">Date of Marriage :</label>
-                       </td>
-                       <td>
-                         <label for="place_of_marriage">Place of Marriage :</label>
-                       </td>
-                       <td>
-                         <label for="spouse_maiden_name">Spouse MAiden NAme :</label>
-                       </td>
-                     </tr>
-     
-                     <tr>
-                       <td>
-                         <input
-                           type="text"
-                           name="date_of_marriage"
-                           id="date_of_marriage"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="place_of_marriage"
-                           id="place_of_marriage"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="spouse_maiden_name"
-                           id="spouse_maiden_name"
-                         />
-                       </td>
-                     </tr>
-     
-                     <tr>
-                       <td>
-                         <label for="place_spouse_first_entered_us"
-                           >Place Spouse First Entered the Us</label
-                         >
-                       </td>
-                       <td>
-                         <label for="date_spouse_first_entered_us"
-                           >Date Spouse First Entered the Us</label
-                         >
-                       </td>
-                       <td>
-                         <label for="date_spouse_become_us_citizen">
-                           <p>-Date Spouse Become a US Citizen:</p>
-                           <p>-What City and State She Become A US Citizen In :</p>
-                         </label>
-                       </td>
-                     </tr>
-     
-                     <tr>
-                       <td>
-                         <input
-                           type="text"
-                           name="place_spouse_first_entered_us"
-                           id="place_spouse_first_entered_us"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="date_spouse_first_entered_us"
-                           id="date_spouse_first_entered_us"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="date_spouse_become_us_citizen"
-                           id="date_spouse_become_us_citizen"
-                         />
-                       </td>
-                     </tr>
-                   </table> -->
               <div class="pro_form_group">
                 <!-- --spouse_name-- -->
                 <div class="pro_input_Row">
@@ -1093,85 +839,7 @@
             <div id="informationSpouseEmployment">
               <h2>CURRENT SPOUSE'S EMPLOYMENT INFORMATION :</h2>
               <br>
-              <!-- <p>Information about your spouse's employment in the US</p> -->
-              <!-- <table>
-                     <tr>
-                       <th>
-                         <label for="full_name_of_spouse_employer"
-                           >Full Name of Spouse's Emloyer</label
-                         >
-                       </th>
-                       <th>
-                         <label for="full_address_of_spouse_employer"
-                           >Full address of Spouse's Employer</label
-                         >
-                       </th>
-                       <th>
-                         <label for="earning_per_week_of_spouse"
-                           >Earnning Per week:(Approximate)</label
-                         >
-                       </th>
-                       <th>
-                         <label for="type_of_work_preformed_by_spouse"
-                           >Type of Work Preformed</label
-                         >
-                       </th>
-                       <th>
-                         <label for="start_of_employment"
-                           >Start of Employment:(Month,Day,Year)</label
-                         >
-                       </th>
-                       <th>
-                         <label for="end_of_employment"
-                           >End of Employment :(Month,Day,Year)</label
-                         >
-                       </th>
-                     </tr>
-                     <tr>
-                       <td>
-                         <input
-                           type="text"
-                           name="full_name_of_spouse_employer"
-                           id="full_name_of_spouse_employer"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="full_address_of_spouse_employer"
-                           id="full_address_of_spouse_employer"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="earning_per_week_of_spouse"
-                           id="earning_per_week_of_spouse"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="text"
-                           name="type_of_work_preformed_by_spouse"
-                           id="type_of_work_preformed_by_spouse"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="date"
-                           name="start_of_employment"
-                           id="start_of_employment"
-                         />
-                       </td>
-                       <td>
-                         <input
-                           type="date"
-                           name="end_of_employment"
-                           id="end_of_employment"
-                         />
-                       </td>
-                     </tr>
-                   </table> -->
+
               <div class="pro_form_gorup">
                 <!-- --full_name_of_spouse_employer-- -->
                 <div class="pro_input_Row">
@@ -2013,7 +1681,7 @@
             <button class="stepBtn" id="nextBtn8" onclick="handlePhase8Button()">next &gt;</button>
           </div>
         </section>
-        <!-- =======EMPLOYMENT INFORMATION FOR LAST 10 YEARS======== -->
+        <!-- =======EMPLOYMENT INFORMATION FOR LAST TEN YEARS======== -->
         <section id="phase9" class="pro_form_phase hidden">
           <h2>EMPLOYMENT INFORMATION FOR LAST 10 YEARS</h2>
           <!-- <div class="hidden">
@@ -2517,7 +2185,7 @@
           </div>
           <div class="pahasebtnBox">
             <button class="stepBtn" onclick="handlePreviousBtn(phase9,phase10)">&lt; Previous</button>
-            <button  class="submitBtn" onclick="handleSubmit()" id="nextBtnSubmit">Submit</button>
+            <button class="submitBtn" onclick="handleSubmit()" id="nextBtnSubmit">Submit</button>
           </div>
           <div id="register-message"></div>
 

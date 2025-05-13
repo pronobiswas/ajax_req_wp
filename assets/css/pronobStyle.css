@@ -491,6 +491,9 @@
     flex-direction: column;
     gap: 10px;
   }
+  #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper fieldset{
+    padding: 12px !important;
+  }
   #immigration_form .pro_container .pro_form #phase3 #residences .residence_detail_wraper .pro_form_group {
     width: 100%;
     display: flex;

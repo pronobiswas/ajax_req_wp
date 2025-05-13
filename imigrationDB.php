@@ -1,6 +1,8 @@
 <?php
 
 
+
+
 function create_registration_tables() {
     global $wpdb;
     $first_table = $wpdb->prefix . 'personal_info';
@@ -17,23 +19,25 @@ function create_registration_tables() {
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
     // =========personal information=========
     $sql1 = "CREATE TABLE $first_table (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        full_name varchar(255) NOT NULL,
-        other_name varchar(255) NOT NULL,
-        mailing_address varchar(100) NOT NULL,
-        city varchar(100) NOT NULL,
-        zip_code varchar(255) NOT NULL,
-        phone_number varchar(20),
-        email_address varchar(250) NOT NULL,
-        height varchar(250) NOT NULL,
-        weight varchar(20) NOT NULL,
-        date_of_birth varchar(100) NOT NULL,
-        place_of_birth varchar(100) NOT NULL,
-        country_of_citizenship varchar(100) NOT NULL,
-        marital_status varchar(100) NOT NULL,
-        created_at datetime DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (id)
-    ) $charset_collate;";
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    full_name varchar(255) NOT NULL,
+    other_name varchar(255) NOT NULL,
+    mailing_address varchar(100) NOT NULL,
+    city varchar(100) NOT NULL,
+    zip_code varchar(255) NOT NULL,
+    phone_number varchar(20),
+    email_address varchar(250) NOT NULL,
+    height varchar(250) NOT NULL,
+    weight varchar(20) NOT NULL,
+    date_of_birth varchar(100) NOT NULL,
+    place_of_birth varchar(100) NOT NULL,
+    country_of_citizenship varchar(100) NOT NULL,
+    marital_status varchar(100) NOT NULL,
+    created_at datetime DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    -- FOREIGN KEY (id) REFERENCES wp_users(id)
+
+) $charset_collate;";
     // ========entry into usa==========
     $sql2 = "CREATE TABLE $second_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -131,6 +135,7 @@ function create_registration_tables() {
         child_immigration_status varchar(255) NOT NULL,
         child_alien_registration_number varchar(255) NOT NULL,
         child_birth_date varchar(255) NOT NULL,
+        child_country_of_birth varchar(255) NOT NULL,
         child_average_earnings varchar(255) NOT NULL,
         name_of_child1 varchar(255) NOT NULL,
         child_citizenship1 varchar(255) NOT NULL,
@@ -235,18 +240,24 @@ function create_registration_tables() {
 
     
 
-    dbDelta($sql1);
-    dbDelta($sql2);
-    dbDelta($sql3);
-    dbDelta($sql4);
-    dbDelta($sql5);
-    dbDelta($sql6);
-    dbDelta($sql7);
-    dbDelta($sql8);
-    dbDelta($sql9);
-    dbDelta($sql10);
+    $result1 = dbDelta($sql1);
+    $result2 = dbDelta($sql2);
+    $result3 = dbDelta($sql3);
+    $result4 = dbDelta($sql4);
+    $result5 = dbDelta($sql5);
+    $result6 = dbDelta($sql6);
+    $result7 = dbDelta($sql7);
+    $result8 = dbDelta($sql8);
+    $result9 = dbDelta($sql9);
+    $result10 = dbDelta($sql10);
     
+    // Log results for debugging
+    error_log('Table creation results: ' . print_r($result1, true));
+    
+    if($wpdb->last_error) {
+        error_log('Database error: ' . $wpdb->last_error);
+    }
 }
-add_action('admin_init', 'create_registration_tables');
+add_action('after_switch_theme', 'create_registration_tables');
 
 ?>
