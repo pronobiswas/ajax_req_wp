@@ -9,6 +9,7 @@
         
     
         $data = [
+            'userId' => get_current_user_id(),
             'full_name' => sanitize_text_field($_POST['full_name']),
             'other_name' => sanitize_text_field($_POST['other_name']),
             'mailing_address' => sanitize_text_field($_POST['mailing_address']),
@@ -45,6 +46,7 @@
         $table2 = $wpdb->prefix . 'entryintous';
     
         $data2 = [
+            'userId' => get_current_user_id(),
             'date_of_entry' => sanitize_text_field($_POST['date_of_entry']),
             'how_to_enter' => sanitize_text_field($_POST['how_to_enter']),
             'mailing_address' => sanitize_text_field($_POST['mailing_address']),
@@ -74,6 +76,7 @@
         $table3 = $wpdb->prefix . 'continuous_residence';
     
         $data3 = [
+            'userId' => get_current_user_id(),
             'isContinuousResidence' => sanitize_text_field($_POST['isContinuousResidence']),
             'left_US' => sanitize_text_field($_POST['left_US']),
             'residence_address1' => sanitize_text_field($_POST['residence_address1']),
@@ -107,6 +110,7 @@
         $table4 = $wpdb->prefix . 'employment_authorazition';
     
         $data4 = [
+            'userId' => get_current_user_id(),
             'current_annual_income' => sanitize_text_field($_POST['current_annual_income']),
             'current_emloyer_name' => sanitize_text_field($_POST['current_emloyer_name']),
             'current_emloyer_address' => sanitize_text_field($_POST['current_emloyer_address']),
@@ -133,6 +137,7 @@
         $table5 = $wpdb->prefix . 'info_about_current_spouse';
     
         $data5 = [
+            'userId' => get_current_user_id(),
             'spouse_name' => sanitize_text_field($_POST['spouse_name']),
             'cityzenship_of_spouse' => sanitize_text_field($_POST['cityzenship_of_spouse']),
             'current_address_of_spouse' => sanitize_text_field($_POST['current_address_of_spouse']),
@@ -177,6 +182,7 @@
         $table6 = $wpdb->prefix . 'info_about_prior_spouse';
     
         $data6 = [
+            'userId' => get_current_user_id(),
             'full_name_of_prior_spouse' => sanitize_text_field($_POST['full_name_of_prior_spouse']),
             'date_prior_marrige_began' => sanitize_text_field($_POST['date_prior_marrige_began']),
             'date_prior_marrige_ended' => sanitize_text_field($_POST['date_prior_marrige_ended']),
@@ -217,6 +223,7 @@
         $table7 = $wpdb->prefix . 'info_about_child';
     
         $data7 = [
+            'userId' => get_current_user_id(),
             'name_of_child' => sanitize_text_field($_POST['name_of_child']),
             'child_citizenship' => sanitize_text_field($_POST['child_citizenship']),
             'child_current_address' => sanitize_text_field($_POST['child_current_address']),
@@ -254,6 +261,7 @@
         $table8 = $wpdb->prefix . 'info_where_lived_in_us';
     
         $data8 = [
+            'userId' => get_current_user_id(),
             'street_and_number' => sanitize_text_field($_POST['street_and_number']),
             'resided_from' => sanitize_text_field($_POST['resided_from']),
             'resided_to' => sanitize_text_field($_POST['resided_to']),
@@ -286,6 +294,7 @@
         $table9 = $wpdb->prefix . 'info_employment_last_10years';
     
         $data9 = [
+            'userId' => get_current_user_id(),
             'full_name_of_employer' => sanitize_text_field($_POST['full_name_of_employer']),
             'full_address_of_employer' => sanitize_text_field($_POST['full_address_of_employer']),
             'earning_per_week' => sanitize_text_field($_POST['earning_per_week']),
@@ -329,6 +338,7 @@
         $table10 = $wpdb->prefix . 'info_about_family';
     
         $data10 = [
+            'userId' => get_current_user_id(),
             'father_name' => sanitize_text_field($_POST['father_name']),
             'father_cityzen_of_what_country' => sanitize_text_field($_POST['father_cityzen_of_what_country']),
             'father_relationship_to_me' => sanitize_text_field($_POST['father_relationship_to_me']),

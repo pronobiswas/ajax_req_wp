@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 let pro_form_phase = document.querySelectorAll('.pro_form #cityzenPth_form .pro_form_phase');
+// =====phase validation=====
 function handle_phase_navigation(phaseId , validationFlag ){
     console.log(validationFlag);
     
