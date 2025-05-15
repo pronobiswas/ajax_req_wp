@@ -79,6 +79,11 @@ function custom_logout_redirect() {
 }
 
 //-------------------------------------------      OUR CODE START HERE       ----------------------------------------------------------------------------------------
+function enqueue_pdf_script() {
+    wp_enqueue_script('html2pdf', 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', [], null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_pdf_script');
+
 // =========include all from nessery things============
 include_once get_stylesheet_directory().'/imigrationDB.php';
 include_once get_stylesheet_directory().'/ajax_req_handeler.php';

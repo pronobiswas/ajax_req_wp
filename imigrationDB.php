@@ -25,6 +25,7 @@ function create_registration_tables() {
         other_name varchar(255) NOT NULL,
         mailing_address varchar(100) NOT NULL,
         city varchar(100) NOT NULL,
+        state varchar(100) NOT NULL,
         zip_code varchar(255) NOT NULL,
         phone_number varchar(20),
         email_address varchar(250) NOT NULL,
@@ -44,7 +45,7 @@ function create_registration_tables() {
         userId varchar(255) NOT NULL,
         date_of_entry varchar(255) NOT NULL,
         how_to_enter varchar(255) NOT NULL,
-        mailing_address varchar(100) NOT NULL,
+        place_of_entry varchar(255) NOT NULL,
         have_you_ever_left_the_US varchar(100) NOT NULL,
         reason_for_leaving varchar(255) NOT NULL,
         departure_date1 varchar(20),
@@ -113,7 +114,7 @@ function create_registration_tables() {
     // ====information about prior spouse===
     $sql6 = "CREATE TABLE $sixth_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        userId varchar(255) NOT NULL,
+        userId varchar(255) NOT NULL ,
         full_name_of_prior_spouse varchar(255) NOT NULL,
         date_prior_marrige_began varchar(255) NOT NULL,
         date_prior_marrige_ended varchar(255) NOT NULL,
@@ -134,7 +135,7 @@ function create_registration_tables() {
     ) $charset_collate;";
      $sql7 = "CREATE TABLE $seventh_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        userId varchar(255) NOT NULL,
+        userId varchar(255) NOT NULL ,
         name_of_child varchar(255) NOT NULL,
         child_citizenship varchar(255) NOT NULL,
         child_current_address varchar(255) NOT NULL,
@@ -156,7 +157,7 @@ function create_registration_tables() {
     ) $charset_collate;";
     $sql8 = "CREATE TABLE $eighth_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        userId varchar(255) NOT NULL,
+        userId varchar(255) NOT NULL ,
         street_and_number varchar(255) NOT NULL,
         resided_from varchar(255) NOT NULL,
         resided_to varchar(255) NOT NULL,
@@ -171,7 +172,7 @@ function create_registration_tables() {
     ) $charset_collate;";
     $sql9 = "CREATE TABLE $nineth_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        userId varchar(255) NOT NULL,
+        userId varchar(255) NOT NULL ,
         full_name_of_employer varchar(255) NOT NULL,
         full_address_of_employer varchar(255) NOT NULL,
         earning_per_week varchar(255) NOT NULL,
@@ -195,7 +196,7 @@ function create_registration_tables() {
     ) $charset_collate;";
     $sql10 = "CREATE TABLE $tenth_table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
-        userId varchar(255) NOT NULL,
+        userId varchar(255) NOT NULL ,
         father_name varchar(255) NOT NULL,
         father_cityzen_of_what_country varchar(255) NOT NULL,
         father_relationship_to_me varchar(255) NOT NULL,

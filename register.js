@@ -96,11 +96,12 @@ jQuery(document).ready(function ($) {
     let data2 = {
       action: "save_phase_two",
       nonce: reg_ajax.nonce,
-
       date_of_entry: $("#date_of_entry").val(),
       how_to_enter: $("#how_to_enter").val(),
       place_of_entry: $("#place_of_entry").val(),
-      have_you_ever_left_the_US: $("#have_you_ever_left_the_US").val(),
+      have_you_ever_left_the_US: $("#reason_for_leaving").val(),
+      departure_date: $("#departure_date1").val(),
+      return_date1: $("#return_date1").val(),
     };
     if(!data2.date_of_entry || !data2.how_to_enter || !data2.place_of_entry || !data2.have_you_ever_left_the_US ){
       isValidatePhaseTwo = false
