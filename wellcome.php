@@ -23,7 +23,7 @@ get_header(); ?>
             if ($data) :
             ?>
                 <div id="firstPart">
-                    <div style="width:100%; padding:20px 0 20px 100px ;">
+                    <div style="width:100%;">
                         <h4 class="pdf_title">CLIENT INTAKE FORM </h4>
                         <div class="pro_pdf_row">
                             <div class="pro_col_third">
@@ -311,12 +311,11 @@ get_header(); ?>
         padding: 20px;
     }
 
-    .clint_intake {
+    .pdf_title {
         width: 100%;
         text-align: center;
         color: black !important;
-        margin-bottom: 50px !important;
-        padding-bottom: 50px;
+        padding-bottom: 50px !important;
     }
 
     .content_box {
@@ -337,9 +336,9 @@ get_header(); ?>
 
     #firstPart .persoanl_info_heading {
         width: 100%;
-        padding: 50px 0 !important;
+        padding: 20px 0 30px 0 !important;
         text-align: center;
-        color: balck !important;
+        color: black !important;
     }
 
     .entryUs_title {
@@ -361,7 +360,8 @@ get_header(); ?>
         height: 100%;
         display: flex;
         gap: 0;
-        padding: 2px !important;
+        padding: 0px !important;
+        margin: 0 !important;
     }
 
     .pro_pdf_col {
@@ -374,7 +374,7 @@ get_header(); ?>
     .key_name {
         position: relative;
         font-size: 16px;
-        line-height: 20px;
+        line-height: 16px;
         white-space: nowrap;
         color: black !important;
     }
@@ -422,13 +422,9 @@ get_header(); ?>
         max-width: 75%;
         display: flex;
     }
-    #pdf-content *{
-        line-height: 0.9 !important;
-    }
-    @media print{
-        #pdf-content, #pdf-content * {
-            line-height: 0.8;
-        }
+     #pdf-content, #pdf-content * {
+        line-height: 14px !important;
+        font-size: 16px !important;
     }
 </style>
 
