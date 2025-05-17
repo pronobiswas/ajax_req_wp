@@ -1059,7 +1059,7 @@ document.getElementById("downloadPDF").addEventListener("click", async () => {
       return;
     }
     const margin = 10;
-    const lineHeight = 10;
+    const lineHeight = 1;
     const pageHeight = doc.internal.pageSize.height;
     let y = margin;
     Object.entries(data).forEach(([key, value]) => {
