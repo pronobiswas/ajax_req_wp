@@ -37,15 +37,15 @@
 
 // ---------------  new try ----------------
 jQuery(document).ready(function ($) {
-    let isValidatePhaseOne = false;
-    let isValidatePhaseTwo = false;
-    let isValidatePhaseThree = false;
-    let isValidatePhaseFour = false;
-    let isValidatePhaseFive = false;
-    let isValidatePhaseSix = false;
-    let isValidatePhaseSeven = false;
-    let isValidatePhaseEight = false;
-    let isValidatePhaseNine = false;
+  let isValidatePhaseOne = false;
+  let isValidatePhaseTwo = false;
+  let isValidatePhaseThree = false;
+  let isValidatePhaseFour = false;
+  let isValidatePhaseFive = false;
+  let isValidatePhaseSix = false;
+  let isValidatePhaseSeven = false;
+  let isValidatePhaseEight = false;
+  let isValidatePhaseNine = false;
   // =====first step start here=====11111111
   $("#nextBtn1").on("click", function () {
     // ======collect data from first phase======
@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
     } else {
       isValidatePhaseOne = true;
     }
-    if(isValidatePhaseOne){
+    if (isValidatePhaseOne) {
       sent_ajax_post_req(data);
     }
   });
@@ -104,11 +104,18 @@ jQuery(document).ready(function ($) {
       departure_date1: $("#departure_date1").val(),
       return_date1: $("#return_date1").val(),
     };
-    if(!data2.date_of_entry || !data2.how_to_enter || !data2.place_of_entry || !data2.have_you_ever_left_the_US ){
-      isValidatePhaseTwo = false
-    }else{isValidatePhaseTwo = true}
-    if(isValidatePhaseTwo){
-      sent_ajax_post_req(data2)
+    if (
+      !data2.date_of_entry ||
+      !data2.how_to_enter ||
+      !data2.place_of_entry ||
+      !data2.have_you_ever_left_the_US
+    ) {
+      isValidatePhaseTwo = false;
+    } else {
+      isValidatePhaseTwo = true;
+    }
+    if (isValidatePhaseTwo) {
+      sent_ajax_post_req(data2);
     }
   });
   // =====third step start here=====33333333
@@ -132,12 +139,20 @@ jQuery(document).ready(function ($) {
       where_education_received: $("#where_education_received").val(),
       why_left_us: $("#why_left_us").val(),
     };
-    if(!data3.isContinuousResidence || !data3.current_education_status || !data3.where_education_received || !data3.us_military || !data3.left_US){
-      isValidatePhaseThree = false
-    }else{isValidatePhaseThree = true}
-    
-    if(isValidatePhaseThree){
-      sent_ajax_post_req(data3)
+    if (
+      !data3.isContinuousResidence ||
+      !data3.current_education_status ||
+      !data3.where_education_received ||
+      !data3.us_military ||
+      !data3.left_US
+    ) {
+      isValidatePhaseThree = false;
+    } else {
+      isValidatePhaseThree = true;
+    }
+
+    if (isValidatePhaseThree) {
+      sent_ajax_post_req(data3);
     }
   });
   // =====fourth step start here=====4444444
@@ -150,8 +165,19 @@ jQuery(document).ready(function ($) {
       current_emloyer_address: $("#current_emloyer_address").val(),
       why_work_auth: $("#why_work_auth").val(),
     };
-    if(!data4.current_annual_income || !data4.current_emloyer_name || !data4.current_emloyer_address || !data4.why_work_auth){isValidatePhaseFour = false}else{isValidatePhaseFour = true};
-    if(isValidatePhaseFour){sent_ajax_post_req(data4)}
+    if (
+      !data4.current_annual_income ||
+      !data4.current_emloyer_name ||
+      !data4.current_emloyer_address ||
+      !data4.why_work_auth
+    ) {
+      isValidatePhaseFour = false;
+    } else {
+      isValidatePhaseFour = true;
+    }
+    if (isValidatePhaseFour) {
+      sent_ajax_post_req(data4);
+    }
   });
   // =====fifth step start here=====55555
   $("#nextBtn5").on("click", function () {
@@ -187,14 +213,40 @@ jQuery(document).ready(function ($) {
       end_of_employment: $("#end_of_employment").val(),
     };
     // -----validate-----
-    if(!data5.spouse_name || !data5.cityzenship_of_spouse || !data5.current_address_of_spouse || !data5.spouseImmigration || !data5.spouse_aline_registration_number || !data5.spouse_birth_date || !data5.spouse_social_security_number || !data5.date_of_marriage || !data5.place_of_marriage || !data5.spouse_maiden_name || !data5.place_spouse_first_entered_us || !data5.date_spouse_first_entered_us || !data5.date_spouse_become_us_citizen || !data5.full_name_of_spouse_employer || !data5.full_address_of_spouse_employer || !data5.earning_per_week_of_spouse || !data5.type_of_work_preformed_by_spouse || !data5.start_of_employment || !data5.end_of_employment){isValidatePhaseFive = false}else{isValidatePhaseFive = true};
+    if (
+      !data5.spouse_name ||
+      !data5.cityzenship_of_spouse ||
+      !data5.current_address_of_spouse ||
+      !data5.spouseImmigration ||
+      !data5.spouse_aline_registration_number ||
+      !data5.spouse_birth_date ||
+      !data5.spouse_social_security_number ||
+      !data5.date_of_marriage ||
+      !data5.place_of_marriage ||
+      !data5.spouse_maiden_name ||
+      !data5.place_spouse_first_entered_us ||
+      !data5.date_spouse_first_entered_us ||
+      !data5.date_spouse_become_us_citizen ||
+      !data5.full_name_of_spouse_employer ||
+      !data5.full_address_of_spouse_employer ||
+      !data5.earning_per_week_of_spouse ||
+      !data5.type_of_work_preformed_by_spouse ||
+      !data5.start_of_employment ||
+      !data5.end_of_employment
+    ) {
+      isValidatePhaseFive = false;
+    } else {
+      isValidatePhaseFive = true;
+    }
     // ----sent ajax req----
-    if(isValidatePhaseFive){sent_ajax_post_req(data5)}else{console.log("please fill the form");}
+    if (isValidatePhaseFive) {
+      sent_ajax_post_req(data5);
+    } else {
+      console.log("please fill the form");
+    }
   });
   // =====sixeth step start here=====55555
   $("#nextBtn6").on("click", function () {
-
-
     let data6 = {
       action: "save_phase_six",
       nonce: reg_ajax.nonce,
@@ -514,12 +566,15 @@ jQuery(document).ready(function ($) {
     } else {
       setTimeout(function () {
         console.log("req jai ni");
-      }, 500);
+      }, 100);
     }
   });
   // ====save data on database =======
   // ====save data on database =======
   function sent_ajax_post_req(data) {
+    console.log(Object.keys(data).length);
+    
+    
     $.ajax({
       url: reg_ajax.ajax_url,
       type: "POST",

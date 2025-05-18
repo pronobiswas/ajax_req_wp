@@ -37,16 +37,16 @@
         </div>
         <div id="formPagenetion" class=" hidden">
           <ol>
-            <li onclick="handle_phase_navigation('phase1' , 'isValidatePhase1')">personal</li>
-            <li onclick="handle_phase_navigation('phase2', 'isValidatePhase2')">Entry Into US</li>
-            <li onclick="handle_phase_navigation('phase3' ,'isValidatePhase3')">Continious residence</li>
-            <li onclick="handle_phase_navigation('phase4')">Emplyment Authorization</li>
-            <li onclick="handle_phase_navigation('phase5')">Current Spouse</li>
-            <li onclick="handle_phase_navigation('phase6')">Prior Maggaige</li>
-            <li onclick="handle_phase_navigation('phase7')">Child Info</li>
-            <li onclick="handle_phase_navigation('phase8')">Living Info</li>
-            <li onclick="handle_phase_navigation('phase9')">Employment Info</li>
-            <li onclick="handle_phase_navigation('phase10')">Famlily Info</li>
+            <li onclick="handle_phase_navigation('phase1' , isValidatePhase1)">personal</li>
+            <li onclick="handle_phase_navigation('phase2', isValidatePhase2)">Entry Into US</li>
+            <li onclick="handle_phase_navigation('phase3' ,isValidatePhase3)">Continious residence</li>
+            <li onclick="handle_phase_navigation('phase4',isValidatePhase4)">Emplyment Authorization</li>
+            <li onclick="handle_phase_navigation('phase5',isValidatePhase5)">Current Spouse</li>
+            <li onclick="handle_phase_navigation('phase6',isValidatePhase6)">Prior Maggaige</li>
+            <li onclick="handle_phase_navigation('phase7',isValidatePhase7)">Child Info</li>
+            <li onclick="handle_phase_navigation('phase8',isValidatePhase8)">Living Info</li>
+            <li onclick="handle_phase_navigation('phase9',isValidatePhase9)">Employment Info</li>
+            <li onclick="handle_phase_navigation('phase10',isValidatePhase10)">Famlily Info</li>
           </ol>
         </div>
       </div>

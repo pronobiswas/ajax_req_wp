@@ -4,7 +4,7 @@ let isValidatePhase2 = "false";
 let isValidatePhase3 = "false";
 let isValidatePhase4 = "false";
 let isValidatePhase5 = "false";
-let isPhase6Validate = "false";
+let isValidatePhase6 = "false";
 let isValidatePhase7 = "false";
 let isValidatePhase8 = "false";
 let isValidatePhase9 = "false";
@@ -30,15 +30,17 @@ let pro_form_phase = document.querySelectorAll('.pro_form #cityzenPth_form .pro_
 // =====phase validation=====
 function handle_phase_navigation(phaseId , validationFlag ){
     console.log(validationFlag);
-    
-    pro_form_phase.forEach((phase)=>{
-      phase.classList.add('hidden')
-    });
-    let unlock_phase = document.getElementById(phaseId);
-    if(unlock_phase){
-        unlock_phase.classList.remove('hidden');
-    }else{
-      document.getElementById('phase1').classList.remove('hidden')
+    console.log(phaseId);
+    if(validationFlag == "true"){
+      pro_form_phase.forEach((phase)=>{
+        phase.classList.add('hidden')
+      });
+      let unlock_phase = document.getElementById(phaseId);
+      if(unlock_phase){
+          unlock_phase.classList.remove('hidden');
+      }else{
+        document.getElementById('phase1').classList.remove('hidden')
+      }
     }
 };
 
@@ -366,6 +368,7 @@ function validatePhase3() {
       input.classList.add("warnInput");
     } else {
       input.classList.remove("warnInput");
+      isValidatePhase3 = "true";
     }
   });
   phase3select.forEach((select) => {
@@ -611,15 +614,15 @@ function validatePhase6() {
     !date_prior_marrige_began ||
     !full_name_of_prior_spouse
   ) {
-    isPhase6Validate = "false";
+    isValidatePhase6 = "false";
   } else {
-    isPhase6Validate = "true";
+    isValidatePhase6 = "true";
   }
 }
 // -----handle phase6 button ------
 function handlePhase6next() {
   validatePhase6();
-  if (isPhase6Validate == "true") {
+  if (isValidatePhase6 == "true") {
     phase6.classList.add("hidden");
     document.getElementById("phase7").classList.remove("hidden");
   }
