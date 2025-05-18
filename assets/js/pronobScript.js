@@ -1010,7 +1010,9 @@ function handleSubmit() {
 // =========handle save button========
 function handleSaveBtn() {
   console.log("handle save button");
-  localStorage.setItem("savedData", JSON.stringify(applicantInfo));
+  console.log("allInputValue", allInputValue);
+  
+  localStorage.setItem("savedData", JSON.stringify(allInputValue));
 }
 // ====auto input all filed data=====
 window.addEventListener("DOMContentLoaded", () => {
@@ -1028,31 +1030,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // ======handle pdf file========
-// document.getElementById("downloadPDF").addEventListener("click", async () => {
-//   const { jsPDF } = window.jspdf;
-//   const doc = new jsPDF();
-//   const data = JSON.parse(localStorage.getItem("formData"));
-//   if (!data) {
-//     alert("No form data found in localStorage.");
-//     return;
-//   }
-//   const margin = 10;
-//   const lineHeight = 10;
-//   const pageHeight = doc.internal.pageSize.height;
-//   let y = margin;
-//   const lines = Object.entries(data).map(([key, value]) => `${key}: ${value}`);
-//   lines.forEach((line) => {
-//     if (y + lineHeight > pageHeight - margin) {
-//       doc.addPage();
-//       y = margin;
-//     }
-//     doc.text(line, margin, y);
-//     y += lineHeight;
-//   });
-
-//   doc.save("form-data.pdf");
-//   console.log(doc);
-// });
 document.getElementById("downloadPDF").addEventListener("click", async () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
