@@ -32,21 +32,21 @@
       <!-- ===page option=== -->
       <div id="pageOptions">
         <div class="pageOption">
-          <span id="outoftext">page <span id="pageNum">1</span> of 3</span>
+          <span id="outoftext">page <span id="pageNum">1</span> of 10</span>
           <span>&#11206;</span>
         </div>
         <div id="formPagenetion" class=" hidden">
           <ol>
-            <li onclick="handle_phase_navigation('phase1' , isValidatePhase1)">personal</li>
-            <li onclick="handle_phase_navigation('phase2', isValidatePhase2)">Entry Into US</li>
-            <li onclick="handle_phase_navigation('phase3' ,isValidatePhase3)">Continious residence</li>
-            <li onclick="handle_phase_navigation('phase4',isValidatePhase4)">Emplyment Authorization</li>
-            <li onclick="handle_phase_navigation('phase5',isValidatePhase5)">Current Spouse</li>
-            <li onclick="handle_phase_navigation('phase6',isValidatePhase6)">Prior Maggaige</li>
-            <li onclick="handle_phase_navigation('phase7',isValidatePhase7)">Child Info</li>
-            <li onclick="handle_phase_navigation('phase8',isValidatePhase8)">Living Info</li>
-            <li onclick="handle_phase_navigation('phase9',isValidatePhase9)">Employment Info</li>
-            <li onclick="handle_phase_navigation('phase10',isValidatePhase10)">Famlily Info</li>
+            <li onclick="handle_phase_navigation('phase1' , isValidatePhase1 ,1 )">personal</li>
+            <li onclick="handle_phase_navigation('phase2', isValidatePhase2,2)">Entry Into US</li>
+            <li onclick="handle_phase_navigation('phase3' ,isValidatePhase3,3)">Continious residence</li>
+            <li onclick="handle_phase_navigation('phase4',isValidatePhase4,4)">Emplyment Authorization</li>
+            <li onclick="handle_phase_navigation('phase5',isValidatePhase5,5)">Current Spouse</li>
+            <li onclick="handle_phase_navigation('phase6',isValidatePhase6,6)">Prior Maggaige</li>
+            <li onclick="handle_phase_navigation('phase7',isValidatePhase7,7)">Child Info</li>
+            <li onclick="handle_phase_navigation('phase8',isValidatePhase8,8)">Living Info</li>
+            <li onclick="handle_phase_navigation('phase9',isValidatePhase9,9)">Employment Info</li>
+            <li onclick="handle_phase_navigation('phase10',isValidatePhase10,10)">Famlily Info</li>
           </ol>
         </div>
       </div>
@@ -361,7 +361,7 @@
             </div>
           </div>
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase1,phase2)"> &lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase1,phase2,1)"> &lt; Previous</button>
             <button class="stepBtn" id="nextBtn2" onclick="handlePhase2btn()">next &gt;</button>
           </div>
         </section>
@@ -578,7 +578,7 @@
             </div>
           </div>
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase2,phase3)"> &lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase2,phase3,2)"> &lt; Previous</button>
             <button class="stepBtn" id="nextBtn3" onclick="handlePhase3btn()">
               next &gt;
             </button>
@@ -641,7 +641,7 @@
             </div>
           </div>
           <div class=" pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase3,phase4)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase3,phase4,3)">&lt; Previous</button>
             <button class="stepBtn" onclick="handlePhaseFourBtn()" id="nextBtn4">next &gt; </button>
           </div>
         </section>
@@ -917,7 +917,7 @@
             </div>
           </div>
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase4,phase5)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase4,phase5,4)">&lt; Previous</button>
             <button class="stepBtn" id="nextBtn5" onclick="handlePhaseFiveBtn()">next &gt;</button>
 
           </div>
@@ -1093,7 +1093,7 @@
           </div>
 
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase5,phase6)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase5,phase6,5)">&lt; Previous</button>
             <button class="stepBtn" onclick="handlePhase6next()" id="nextBtn6">Next &gt;</button>
           </div>
         </section>
@@ -1539,7 +1539,7 @@
           </div>
 
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase6,phase7)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase6,phase7,6)">&lt; Previous</button>
             <button class="stepBtn" id="nextBtn7" onclick="handlePhase7button()">next &gt;</button>
           </div>
         </section>
@@ -1677,7 +1677,7 @@
           </fieldset>
 
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase7,phase8)"> &lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase7,phase8,7)"> &lt; Previous</button>
             <button class="stepBtn" id="nextBtn8" onclick="handlePhase8Button()">next &gt;</button>
           </div>
         </section>
@@ -1890,7 +1890,7 @@
             </div>
           </div>
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase8,phase9)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase8,phase9,8)">&lt; Previous</button>
             <button class="stepBtn" id="nextBtn9" onclick="handlePhase9Button()">next &gt;</button>
           </div>
         </section>
@@ -2184,7 +2184,7 @@
             </div>
           </div>
           <div class="pahasebtnBox">
-            <button class="stepBtn" onclick="handlePreviousBtn(phase9,phase10)">&lt; Previous</button>
+            <button class="stepBtn" onclick="handlePreviousBtn(phase9,phase10,9)">&lt; Previous</button>
             <button class="submitBtn" onclick="handleSubmit()" id="nextBtnSubmit">Submit</button>
           </div>
           <div id="register-message"></div>

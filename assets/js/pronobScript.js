@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 let pro_form_phase = document.querySelectorAll('.pro_form #cityzenPth_form .pro_form_phase');
 // =====phase validation=====
-function handle_phase_navigation(phaseId , validationFlag ){
-    console.log(validationFlag);
-    console.log(phaseId);
+function handle_phase_navigation(phaseId , validationFlag, phasseNumber ){
     if(validationFlag == "true"){
       pro_form_phase.forEach((phase)=>{
         phase.classList.add('hidden')
@@ -41,6 +39,9 @@ function handle_phase_navigation(phaseId , validationFlag ){
       }else{
         document.getElementById('phase1').classList.remove('hidden')
       }
+
+      handleChangePageNumber(phasseNumber);
+      populateFormFields();
     }
 };
 
@@ -225,6 +226,7 @@ function validatePhaseOne() {
 
 function handePhaseOne() {
   validatePhaseOne();
+  handleChangePageNumber(2);
 }
 
 // %%%%%%%%%%%END OF PHASE ONE%%%%%%%%%%%%%%
@@ -299,28 +301,34 @@ function validatePhaseTwo() {
 }
 function handlePhase2btn() {
   validatePhaseTwo();
+  handleChangePageNumber(3);
 }
 // @@@@@@@@@@ END OF PHASE 2 TWO @@@@@@@@@@@@@@@@@
 // %%%%%%%%%% phase three 3 start here %%%%%%%%%%%
-const isContinuousResidence = document.querySelectorAll(
+const isContinuousResidencebtn = document.querySelectorAll(
   '#phase3 input[name="isContinuousResidence"]'
 );
+console.log(isContinuousResidencebtn);
+
 const left_US = document.querySelectorAll('#phase3 input[name="left_US"]');
 const phase3Input = document.querySelectorAll("#phase3 input");
 const phase3select = document.querySelectorAll("#phase3 select");
 // ---collect data form phase3 select----
-isContinuousResidence.forEach((radio) => {
+isContinuousResidencebtn.forEach((radio) => {
+  console.log(radio);
   radio.addEventListener("click", (e) => {
     applicantInfo = {
       ...applicantInfo,
       [e.target.name]: e.target.value.trim(),
     };
-    if (applicantInfo.isContinuousResidence == "yes") {
-      document.getElementById("residences").classList.remove("hidden");
-    } else {
-      document.getElementById("residences").classList.add("hidden");
-    }
   });
+});
+// ====show hide continious residence=====
+document.getElementById('continuousResidence').addEventListener('click',()=>{
+  document.getElementById("residences").classList.remove("hidden");
+});
+document.getElementById('notContinuousResidence').addEventListener('click',()=>{
+  document.getElementById("residences").classList.add("hidden");
 });
 // ---collect data form phase3 input----
 phase3Input.forEach((input) => {
@@ -382,6 +390,7 @@ function handlePhase3btn() {
   validatePhase3();
   document.getElementById("phase3").classList.add("hidden");
   document.getElementById("phase4").classList.remove("hidden");
+  handleChangePageNumber(4);
 }
 // %%%%%%%%%% phase three 3 end here %%%%%%%%%%%
 // ########### PHASE4 FOUR START HERE ############
@@ -449,6 +458,7 @@ function handlePhaseFourBtn() {
   if (isValidatePhase4 == "true") {
     document.getElementById("phase4").classList.add("hidden");
     document.getElementById("phase5").classList.remove("hidden");
+    handleChangePageNumber(5);
   }
 }
 // ###########phase four end here############
@@ -562,6 +572,7 @@ function handlePhaseFiveBtn() {
   if (isValidatePhase5 == "true") {
     document.getElementById("phase5").classList.add("hidden");
     document.getElementById("phase6").classList.remove("hidden");
+    handleChangePageNumber(6);
   }
 }
 // %%%%%%%%%%%%%%phase five end here%%%%%%%%%%%%%%
@@ -625,6 +636,7 @@ function handlePhase6next() {
   if (isValidatePhase6 == "true") {
     phase6.classList.add("hidden");
     document.getElementById("phase7").classList.remove("hidden");
+    handleChangePageNumber(7);
   }
 }
 // $$$$$$$$$ PHASE 6 end HERE $$$$$$$$$$$$
@@ -691,6 +703,7 @@ function handlePhase7button() {
   if (isValidatePhase7 == "true") {
     document.getElementById("phase7").classList.add("hidden");
     document.getElementById("phase8").classList.remove("hidden");
+    handleChangePageNumber(8);
   }
 }
 // %%%%%%%%%%%% PHASE7 END HERE %%%%%%%%%%%%%
@@ -732,6 +745,7 @@ function handlePhase8Button() {
   if (isValidatePhase8 == "true") {
     document.getElementById("phase8").classList.add("hidden");
     document.getElementById("phase9").classList.remove("hidden");
+    handleChangePageNumber(9);
   }
 } 
 // ############ PHASE8 END HERE ############
@@ -794,6 +808,7 @@ function handlePhase9Button() {
   if (isValidatePhase9 == "true") {
     document.getElementById("phase9").classList.add("hidden");
     document.getElementById("phase10").classList.remove("hidden");
+    handleChangePageNumber(10);
   } else {
     console.log("kaj korar kotha na");
   }
@@ -957,13 +972,13 @@ function validatePhase10() {
 function handleHiddenToogle(item) {
   item.classList.toggle("hidden");
 }
-// @@@@@@@@@@@@@@ handle previous button @@@@@@@@@@@@@
-function handlePreviousBtn(previousSection, currentSection) {
-  previousSection.classList.remove("hidden");
-  currentSection.classList.add("hidden");
-}
+
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
-let allsubmitvalue = {};
+let allInputValue = {};
+function saveToLocalStorage() {
+  localStorage.setItem("formData22", JSON.stringify(allInputValue));
+  // Retrieve and populate fields when navigating
+}
 let allInput = document.querySelectorAll(
   "#immigration_form .pro_container input"
 );
@@ -973,13 +988,13 @@ let allselect = document.querySelectorAll(
 let allradio = document.querySelectorAll(
   "#immigration_form .pro_container radio"
 );
-let allInputValue = {};
 allInput.forEach((input) => {
   input.addEventListener("input", (e) => {
     allInputValue = {
       ...allInputValue,
       [e.target.name]: e.target.value.trim(),
     };
+    saveToLocalStorage();
   });
 });
 allselect.forEach((select) => {
@@ -988,6 +1003,7 @@ allselect.forEach((select) => {
       ...allInputValue,
       [e.target.name]: e.target.value.trim(),
     };
+    saveToLocalStorage();
   });
 });
 allradio.forEach((input) => {
@@ -996,8 +1012,32 @@ allradio.forEach((input) => {
       ...allInputValue,
       [e.target.name]: e.target.value.trim(),
     };
+    saveToLocalStorage();
   });
 });
+// @@@@@@@@@@@@@@ handle previous button @@@@@@@@@@@@@
+function handlePreviousBtn(previousSection, currentSection,currentSectionNumber) {
+  previousSection.classList.remove("hidden");
+  currentSection.classList.add("hidden");
+  populateFormFields();
+  handleChangePageNumber(currentSectionNumber);
+}
+function populateFormFields() {
+  let savedData = JSON.parse(localStorage.getItem("formData22"));
+  if (savedData) {
+    allInput.forEach((input) => {
+      input.value = savedData[input.name] || "";
+    });
+    allselect.forEach((select) => {
+      select.value = savedData[select.name] || "";
+    });
+    allradio.forEach((radio) => {
+      if (savedData[radio.name] === radio.value) {
+        radio.checked = true;
+      }
+    });
+  }
+}
 function handleSubmit() {
   localStorage.setItem("formData", JSON.stringify(allInputValue));
   const formatted = Object.entries(allInputValue)
@@ -1014,6 +1054,12 @@ function handleSaveBtn() {
   
   localStorage.setItem("savedData", JSON.stringify(allInputValue));
 }
+// ====handleChangePageNumber=====
+function handleChangePageNumber(phageNumber){
+  document.getElementById('pageNum').innerHTML= phageNumber;
+}
+
+
 // ====auto input all filed data=====
 window.addEventListener("DOMContentLoaded", () => {
   let savedData = localStorage.getItem("savedData");
@@ -1029,103 +1075,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ======handle pdf file========
-document.getElementById("downloadPDF").addEventListener("click", async () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    const data = JSON.parse(localStorage.getItem("formData"));
-    if (!data) {
-      alert("No form data found in localStorage.");
-      return;
-    }
-    const margin = 10;
-    const lineHeight = 1;
-    const pageHeight = doc.internal.pageSize.height;
-    let y = margin;
-    Object.entries(data).forEach(([key, value]) => {
-      if (y + lineHeight > pageHeight - margin) {
-        doc.addPage();
-        y = margin;
-      }
-      doc.setFont("helvetica", "bold");
-      const keyText = `${key}:`;
-      doc.text(keyText, margin, y);
-      const keyWidth = doc.getTextWidth(keyText);
-      doc.setFont("helvetica", "normal");
-      doc.text(`${value}`, margin + keyWidth + 5, y);
-      y += lineHeight;
-    });
-    doc.save("form-data.pdf");
-  });
-  
-  
-// ======handle pdf file========
 
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
-
-// jQuery(document).ready(function($) {
-
-//     // $('#nextBtn1').on('click', function(e) {
-//     //     const url = "<?php echo admin_url('admin-ajax.php')?>";
-//     //     alert(url)
-
-//     //     // var form = $(this);
-//     //     // var formData = form.serialize();
-//     //     const formData = {
-//     //         action: 'submit_immigration_form',
-//     //         full_name: document.getElementById("full_name").value,
-//     //         other_name: document.getElementById("other_name").value,
-//     //         mailing_address: document.getElementById("mailing_address").value,
-//     //         city: document.getElementById("city").value,
-//     //       };
-
-//     //     $.ajax({
-//     //         type: 'POST',
-//     //         url: "../../functions.php",
-//     //         data: formData,
-//     //         success: function(response) {
-//     //             $('#form-message').html('<p style="color: green;">' + response.data.message + '</p>');
-//     //             console.log(response);
-
-//     //             form[0].reset();
-//     //         },
-//     //         error: function(xhr) {
-//     //             $('#form-message').html('<p style="color: red;">' + xhr.responseJSON.data.message + '</p>');
-//     //             console.log(xhr);
-
-//     //         }
-//     //     });
-//     // });
-//     $('#nextBtn1').on('click', function(e) {
-//         e.preventDefault();
-
-//         const formData = {
-//             action: 'submit_immigration_form',
-//             full_name: $('#full_name').val(),
-//             other_name: $('#other_name').val(),
-//             mailing_address: $('#mailing_address').val(),
-//             city: $('#city').val(),
-//         };
-
-//         $.ajax({
-//             type: 'POST',
-//             url: immigration_ajax.ajax_url,
-//             data: formData,
-//             success: function(response) {
-//                 if (response.success) {
-//                     $('#form-message').html('<p style="color: green;">' + response.data.message + '</p>');
-//                     $('#yourFormID')[0].reset(); // Replace with actual form ID
-//                 } else {
-//                     $('#form-message').html('<p style="color: red;">' + response.data.message + '</p>');
-//                 }
-//                 console.log(response);
-//             },
-//             error: function(xhr) {
-//                 $('#form-message').html('<p style="color: red;">An unexpected error occurred.</p>');
-//                 console.log(xhr);
-//             }
-//         });
-//     });
-// });
