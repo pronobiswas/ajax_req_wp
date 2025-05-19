@@ -2211,15 +2211,6 @@
       </div>
     </div>
     <br />
-    <br />
-    <div class="pro_container">
-      <div class="formdatapdf">
-        <div id="show_form_data"></div>
-        <button id="downloadPDF">Download PDF</button>
-      </div>
-    </div>
-    <br />
-    <br />
   </div>
 </div>
 

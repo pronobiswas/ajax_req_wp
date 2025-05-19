@@ -250,6 +250,14 @@
     color: #fff;
     transition: 0.1s all linear;
   }
+  #immigration_form header nav .headerBTNBox button:first-child {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  #immigration_form header nav .headerBTNBox button:last-child {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
   #immigration_form header nav .headerBTNBox button:hover {
     background: var(--secondery);
   }
@@ -310,7 +318,7 @@
     border-radius: 3px;
   }
   #immigration_form header .heading #pageOptions #formPagenetion ol .active_phase_indicator{
-    background-color: #00a700;
+    background-color: #003E67;
   }
   #immigration_form header .heading #pageOptions #formPagenetion ol li {
     width: 100%;
@@ -952,6 +960,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      padding: 10px 0 6px 0;
     }
     #immigration_form header nav h1 {
       order: 1;

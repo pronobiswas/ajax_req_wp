@@ -585,7 +585,7 @@ jQuery(document).ready(function ($) {
           $("#register-message").html(
             '<p style="color:green;">' + response.data + "</p>"
           );
-          $("#cityzenPth_form")[0].reset();
+          // $("#cityzenPth_form")[0].reset();
           console.log("Data saved to DB successfully.");
         } else {
           $("#register-message").html(
