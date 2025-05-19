@@ -79,6 +79,11 @@ function custom_logout_redirect() {
 }
 
 //-------------------------------------------      OUR CODE START HERE       ----------------------------------------------------------------------------------------
+function enqueue_toastify_scripts() {
+    wp_enqueue_script('toastify-js', 'https://cdn.jsdelivr.net/npm/toastify-js', array('jquery'), null, true);
+    wp_enqueue_style('toastify-css', 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_toastify_scripts');
 
 
 function enqueue_pdf_script() {

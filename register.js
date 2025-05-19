@@ -580,11 +580,11 @@ jQuery(document).ready(function ($) {
       type: "POST",
       data: data,
       success: function (response) {
-        console.log(response);
         if (response.success) {
           $("#register-message").html(
             '<p style="color:green;">' + response.data + "</p>"
           );
+          
           // $("#cityzenPth_form")[0].reset();
           console.log("Data saved to DB successfully.");
         } else {

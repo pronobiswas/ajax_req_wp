@@ -308,14 +308,12 @@ function handlePhase2btn() {
 const isContinuousResidencebtn = document.querySelectorAll(
   '#phase3 input[name="isContinuousResidence"]'
 );
-console.log(isContinuousResidencebtn);
 
-const left_US = document.querySelectorAll('#phase3 input[name="left_US"]');
+const left_US_btn = document.querySelectorAll('#phase3 input[name="left_US"]');
 const phase3Input = document.querySelectorAll("#phase3 input");
 const phase3select = document.querySelectorAll("#phase3 select");
 // ---collect data form phase3 select----
 isContinuousResidencebtn.forEach((radio) => {
-  console.log(radio);
   radio.addEventListener("click", (e) => {
     applicantInfo = {
       ...applicantInfo,
@@ -356,18 +354,19 @@ phase3select.forEach((select) => {
   });
 });
 // ---collect data from left_US---
-left_US.forEach((radio) => {
+left_US_btn.forEach((radio) => {
   radio.addEventListener("click", (e) => {
     applicantInfo = {
       ...applicantInfo,
       [e.target.name]: e.target.value.trim(),
     };
-    if (e.target.value == "yes") {
-      document.getElementById("explainLeftReason").classList.remove("hidden");
-    } else {
-      document.getElementById("explainLeftReason").classList.add("hidden");
-    }
   });
+});
+document.getElementById('left_US_Yes').addEventListener('click',()=>{
+  document.getElementById("explainLeftReason").classList.remove("hidden");
+});
+document.getElementById('left_US_No').addEventListener('click',()=>{
+  document.getElementById("explainLeftReason").classList.add("hidden");
 });
 // ---validate phase3 three----
 function validatePhase3() {
@@ -560,10 +559,8 @@ function validatePhase5() {
     !end_of_employment
   ) {
     isValidatePhase5 = "false";
-    console.log("validate fail");
   } else {
     isValidatePhase5 = "true";
-    console.log("validate");
   }
 }
 
@@ -809,8 +806,6 @@ function handlePhase9Button() {
     document.getElementById("phase9").classList.add("hidden");
     document.getElementById("phase10").classList.remove("hidden");
     handleChangePageNumber(10);
-  } else {
-    console.log("kaj korar kotha na");
   }
 }
 // $$$$$$$$$$$ PHASE9 end HERE $$$$$$$$$$$$$$
@@ -1049,9 +1044,6 @@ function handleSubmit() {
 
 // =========handle save button========
 function handleSaveBtn() {
-  console.log("handle save button");
-  console.log("allInputValue", allInputValue);
-  
   localStorage.setItem("savedData", JSON.stringify(allInputValue));
 }
 // ====handleChangePageNumber=====
@@ -1079,3 +1071,4 @@ window.addEventListener("DOMContentLoaded", () => {
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
 // &&&&&&&&&&&&&&&& Handle Submit &&&&&&&&&&&&&&&
+

@@ -550,21 +550,21 @@
               <div>
                 <input
                   type="radio"
-                  id="no"
+                  id="left_US_No"
                   name="left_US"
                   value="no"
                   checked
                   required />
-                <label for="no">No</label>
+                <label for="left_US_No">No</label>
               </div>
               <div>
                 <input
                   type="radio"
-                  id="yes"
+                  id="left_US_Yes"
                   name="left_US"
                   value="yes"
                   required />
-                <label for="yes">Yes</label>
+                <label for="left_US_Yes">Yes</label>
               </div>
             </div>
             <div id="explainLeftReason" class="hidden">
