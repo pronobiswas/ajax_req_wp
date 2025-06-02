@@ -12,6 +12,9 @@
     --Cardo: Cardo;
     --JosefinSlab: Josefin Slab;
   }
+  body {
+    background-color: var(--bgPrimary);
+  }
   
   .pro-hidden {
     display: none;

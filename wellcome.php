@@ -898,6 +898,302 @@ get_header(); ?>
             <?php endif; ?>
         </div>
 
+        <!-- ==== INFORMATION FOR LAST 10YEARS==== -->
+        <div class="content_box">
+            <h4 style="color:black; ">INFORMATION ABOUT YOUR FAMILY</h4>
+            <div style="width: 100%; height:1px; background-color: black; "></div>
+            <p>Information about your father,mother,brother,sister,uncle,aunt,grandfather, grandmother</p>
+            <?php
+                global $wpdb;
+                $user_id = get_current_user_id();
+                $table_name = $wpdb->prefix . 'info_about_family';
+
+                $data10 = $wpdb->get_row(
+                    $wpdb->prepare("SELECT * FROM $table_name WHERE userId = %s", $user_id)
+                );
+
+                if ($data10):
+            ?>
+            <div class="employment_history">
+                <h3>FATHER'S INFORMATION</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>FATHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->father_name);?></td>
+                        <td><?php echo esc_html($data10->father_cityzen_of_what_country);?></td>
+                        <td><?php echo esc_html($data10->father_relationship_to_me);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->father_imigration_status);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->father_alien_registration_number);?></td>
+                        <td><?php echo esc_html($data10->father_birth_date);?></td>
+                        <td><?php echo esc_html($data10->father_birth_country);?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Child's Average Earnings Per Week: $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <br>
+                <!-- ===mother's information=== -->
+                 <h3>MOTHER'S INFORMATION</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>MOTHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->mother_name);?></td>
+                        <td><?php echo esc_html($data10->mother_cityzen_of_what_country);?></td>
+                        <td><?php echo esc_html($data10->mother_relationship_to_me);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->mother_imigration_status);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->mother_alien_registration_number);?></td>
+                        <td><?php echo esc_html($data10->mother_birth_date);?></td>
+                        <td><?php echo esc_html($data10->mother_birth_country);?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Child's Average Earnings Per Week: $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- ===grandfather's information=== -->
+                 <h3>GRANDFATHER'S INFORMATION</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>GRANDFATHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandfather_name);?></td>
+                        <td><?php echo esc_html($data10->grandfather_cityzen_of_what_country);?></td>
+                        <td><?php echo esc_html($data10->grandfather_relationship_to_me);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->grandfather_imigration_status);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandfather_alien_registration_number);?></td>
+                        <td><?php echo esc_html($data10->grandfather_birth_date);?></td>
+                        <td><?php echo esc_html($data10->grandfather_birth_country);?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Child's Average Earnings Per Week: $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- ===grandmother's information=== -->
+                 <h3>GRANDMOTHER'S INFORMATION</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>GRANDMOTHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandmother_name);?></td>
+                        <td><?php echo esc_html($data10->grandmother_cityzen_of_what_country);?></td>
+                        <td><?php echo esc_html($data10->grandmother_relationship_to_me);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->grandmother_imigration_status);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandmother_alien_registration_number);?></td>
+                        <td><?php echo esc_html($data10->grandmother_birth_date);?></td>
+                        <td><?php echo esc_html($data10->grandmother_birth_country);?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Child's Average Earnings Per Week: $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- ===grandfather's information mother side=== -->
+                 <h3>GRANDFATHER ON MOTHER'S SIDE</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>GRANDMOTHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandfather_name_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandfather_cityzen_of_what_country_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandfather_relationship_to_me_mother_side);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->grandfather_imigration_status_mother_side);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandfather_alien_registration_number_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandfather_birth_date_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandfather_birth_country_mother_side);?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Full Address $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- ===grandmother's information mother side=== -->
+                 <h3>GRANDMOTHER ON MOTHER'S SIDE</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>GRANDMOTHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandmother_name_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandmother_cityzen_of_what_country_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandmother_relationship_to_me_mother_side);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->grandmother_imigration_status_mother_side);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->grandmother_alien_registration_number_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandmother_birth_date_mother_side);?></td>
+                        <td><?php echo esc_html($data10->grandmother_birth_country_mother_side);?></td>
+                    </tr>
+                    <tr> 
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Full Address $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- ===brother's information mother side=== -->
+                 <h3>BROTHER INFORMATION</h3>
+                <table class="pro_info_table">
+                    <tr>
+                        <th>BROTHER'S NAME</th>
+                        <th>CITIZENSHIP OF WHAT COUNTRY</th>
+                        <th>RELATIONSHIP TO ME</th>
+                        <th>IMMIGRATION STATUS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->brother_name);?></td>
+                        <td><?php echo esc_html($data10->brother_cityzen_of_what_country);?></td>
+                        <td><?php echo esc_html($data10->brother_relationship_to_me);?></td>
+                        <td rowspan="3"><?php echo esc_html($data10->brother_imigration_status);?></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>ALIEN REGISTRATION NUMBER</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>BIRTH COUNTRY</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($data10->brother_alien_registration_number);?></td>
+                        <td><?php echo esc_html($data10->brother_birth_date);?></td>
+                        <td><?php echo esc_html($data10->brother_birth_country);?></td>
+                    </tr>
+                    <tr> 
+                        <td colspan="4">
+                            <div class="pro_pdf_row">
+                                <p class="key_name"><span>Full Address $&nbsp;</span> </p>
+                                <p class="key_vlaue"><?php echo esc_html($data7->child_average_earnings); ?></p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+            </div>
+            <?php else: ?>
+                <p>No liveing information found for this user.</p>
+            <?php endif; ?>
+        </div>
+
 
 
 

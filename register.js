@@ -152,6 +152,7 @@ jQuery(document).ready(function ($) {
     }
 
     if (isValidatePhaseThree) {
+      console.log("data3", data3);
       sent_ajax_post_req(data3);
     }
   });

@@ -25,18 +25,18 @@ function enqueue_user_dashboard_assets() {
             wp_enqueue_style('dark-layer', get_stylesheet_directory_uri() . '/assets/css/layers/dark-layer.css');
             wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/plugins/fontawesome/css/font-awesome.min.css');
             wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', false);
-        
+
             // JavaScript
             wp_enqueue_script('jquery-ui', get_stylesheet_directory_uri() . '/assets/plugins/jquery-ui/jquery-ui.min.js', array('jquery'), null, true);
             wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() . '/assets/plugins/bootstrap/js/bootstrap.min.js', array('jquery'), null, true);
             wp_enqueue_script('waves', get_stylesheet_directory_uri() . '/assets/plugins/waves/waves.min.js', array('jquery'), null, true);
             wp_enqueue_script('meteor-js', get_stylesheet_directory_uri() . '/assets/js/meteor.min.js', array('jquery'), null, true);
-        
+
             wp_enqueue_script('multistep-form', get_stylesheet_directory_uri() . '/assets/js/multistep-form.js', array('jquery'), null, true);
             wp_localize_script('multistep-form', 'ajax_object', array(
                 'ajax_url' => admin_url('admin-ajax.php'),
             ));
-        
+
             wp_enqueue_script('pronob-script', get_stylesheet_directory_uri() . '/assets/js/pronobScript.js', array('jquery'), '1.0.0', true);
             wp_enqueue_script('jspdf-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', array(), '2.5.1', true);
         }
@@ -85,6 +85,10 @@ function enqueue_toastify_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_toastify_scripts');
 
+function enqueue_pronob_style() {
+    wp_enqueue_style('pronob-style', get_stylesheet_directory_uri() . '/assets/css/pronobStyle.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_pronob_style');
 
 function enqueue_pdf_script() {
     wp_enqueue_script('html2pdf', 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js', [], null, true);
